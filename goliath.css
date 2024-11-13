@@ -11,22 +11,42 @@ body {
   justify-content: center;
   height: 100vh;
   overflow: hidden;
+  padding: 20px;
 }
 
 /* Header Styles */
 .header {
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .header h1 {
   color: #f5f5f5;
-  font-size: 3em;
-  margin-bottom: 10px;
+  font-size: 4em;
+  margin-bottom: 15px;
 }
 
 .subheader {
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Emergency Alert */
+.alert {
+  background-color: #c0392b;
+  color: #fff;
+  padding: 15px;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.alert p {
+  margin: 0;
 }
 
 /* Content Styles */
@@ -38,48 +58,58 @@ body {
 }
 
 .input-section {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 input {
-  padding: 10px;
-  font-size: 1em;
+  padding: 12px;
+  font-size: 1.2em;
   background-color: #2c3e50;
   border: none;
   color: #fff;
-  border-radius: 5px;
-  margin-top: 5px;
+  border-radius: 8px;
+  margin-top: 8px;
   width: 300px;
-  box-shadow: 0 0 10px rgba(231, 76, 60, 0.8);
+  box-shadow: 0 0 15px rgba(231, 76, 60, 0.8);
+  transition: all 0.3s ease-in-out;
 }
 
 input:focus {
   outline: none;
-  box-shadow: 0 0 15px rgba(231, 76, 60, 1);
+  box-shadow: 0 0 25px rgba(231, 76, 60, 1);
   border: 2px solid #e74c3c;
 }
 
 .launch-button {
   background-color: #e74c3c;
   color: #fff;
-  font-size: 1.5em;
+  font-size: 2em;
   padding: 20px;
   border: none;
   cursor: pointer;
   border-radius: 50%;
-  box-shadow: 0 0 20px rgba(231, 76, 60, 1);
-  transition: all 0.3s ease;
+  box-shadow: 0 0 25px rgba(231, 76, 60, 1);
+  transition: all 0.3s ease-in-out;
+  margin-top: 30px;
 }
 
 .launch-button:hover {
   background-color: #c0392b;
   transform: scale(1.1);
-  box-shadow: 0 0 30px rgba(231, 76, 60, 1);
+  box-shadow: 0 0 35px rgba(231, 76, 60, 1);
 }
 
 .launch-button:focus {
   outline: none;
-  box-shadow: 0 0 30px rgba(231, 76, 60, 1);
+  box-shadow: 0 0 35px rgba(231, 76, 60, 1);
+}
+
+/* Countdown Timer */
+.timer {
+  margin-top: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #f39c12;
 }
 
 /* Popup Styles */
@@ -106,22 +136,30 @@ input:focus {
 
 .popup h2 {
   color: #e74c3c;
-  font-size: 1.8em;
+  font-size: 2em;
+  margin-bottom: 15px;
 }
 
 .popup button {
   background-color: #e74c3c;
   color: #fff;
-  font-size: 1.2em;
-  padding: 10px 20px;
+  font-size: 1.5em;
+  padding: 12px 24px;
   border: none;
   cursor: pointer;
   margin-top: 20px;
   border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 .popup button:hover {
   background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+.popup button:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(231, 76, 60, 1);
 }
 
 /* Glitchy animation on the button */

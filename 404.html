@@ -11,7 +11,7 @@
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background: radial-gradient(circle, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 1));
+      background: radial-gradient(circle, rgba(255, 0, 0, 0.8), rgba(0, 0, 0, 1));
       color: #fff;
       height: 100vh;
       overflow: hidden;
@@ -19,51 +19,20 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      animation: flicker 0.3s infinite, distort 0.5s infinite;
-    }
-
-    /* Glitch Effect on Text */
-    @keyframes glitchEffect {
-      0% { transform: translateX(0); opacity: 1; }
-      20% { transform: translateX(-10px); opacity: 0.6; }
-      40% { transform: translateX(10px); opacity: 0.6; }
-      60% { transform: translateX(-10px); opacity: 0.6; }
-      80% { transform: translateX(10px); opacity: 0.6; }
-      100% { transform: translateX(0); opacity: 1; }
+      animation: flicker 0.5s infinite, distort 0.5s infinite;
     }
 
     /* Flickering Effect */
     @keyframes flicker {
-      0% { transform: scale(1); opacity: 0.7; }
-      50% { transform: scale(1.05); opacity: 0.9; }
-      100% { transform: scale(1); opacity: 0.7; }
+      0% { transform: scale(1); opacity: 0.7; background-color: #ff0000; }
+      50% { transform: scale(1.05); opacity: 0.9; background-color: #2b0000; }
+      100% { transform: scale(1); opacity: 0.7; background-color: #ff0000; }
     }
 
     @keyframes distort {
       0% { transform: skew(0deg); }
       50% { transform: skew(-5deg); }
       100% { transform: skew(0deg); }
-    }
-
-    /* Shadow Flicker */
-    @keyframes shadowFlicker {
-      0% { box-shadow: 0 0 8px rgba(255, 0, 0, 0.6); }
-      50% { box-shadow: 0 0 16px rgba(255, 0, 0, 0.8); }
-      100% { box-shadow: 0 0 8px rgba(255, 0, 0, 0.6); }
-    }
-
-    /* Star of David */
-    .star-of-david {
-      width: 150px;
-      height: 150px;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Star_of_David.svg/800px-Star_of_David.svg.png');
-      background-size: cover;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation: glitchEffect 2s infinite;
-      transition: transform 0.3s ease;
     }
 
     /* Warning Banner */
@@ -79,7 +48,7 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       padding: 15px;
-      animation: flash 1s infinite alternate, shadowFlicker 0.5s infinite alternate;
+      animation: flash 1s infinite alternate;
     }
 
     @keyframes flash {
@@ -106,11 +75,6 @@
       box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
     }
 
-    /* Audio */
-    #audio {
-      display: none;
-    }
-
     /* Content Box */
     .content {
       text-align: center;
@@ -131,6 +95,11 @@
       margin-top: 10px;
       animation: glitchEffect 2s infinite;
       text-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
+    }
+
+    /* Audio */
+    #audio {
+      display: none;
     }
 
     /* Interactive Element for Mouse Chasing */
@@ -156,42 +125,37 @@
 
   <!-- Main Content -->
   <div class="content">
-    <div class="star-of-david"></div>
-
-    <h1 class="glitch">תעוורתם למרחק...</h1>
-    <p class="glitch">זו לא הדף שאתם מחפשים. חזרו אחורה כל עוד אתם יכולים.</p>
+    <h1>תעוורתם למרחק...</h1>
+    <p>זו לא הדף שאתם מחפשים. חזרו אחורה כל עוד אתם יכולים.</p>
 
     <button class="return-btn" onclick="window.location.href = '/'">חזרה לבטיחות</button>
   </div>
 
-  <!-- Add more scary visuals -->
-  <div class="overlay"></div>
-
   <script>
     // Chasing effect for mouse
-    const starOfDavid = document.querySelector('.star-of-david');
-    const chasingStar = document.createElement('div');
-    chasingStar.classList.add('chasing-star');
-    chasingStar.style.width = "100px";
-    chasingStar.style.height = "100px";
-    chasingStar.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Star_of_David.svg/800px-Star_of_David.svg.png')";
-    chasingStar.style.backgroundSize = "cover";
-    chasingStar.style.position = "absolute";
-    document.body.appendChild(chasingStar);
-
     document.addEventListener('mousemove', (event) => {
       let mouseX = event.clientX;
       let mouseY = event.clientY;
+
+      const chasingStar = document.createElement('div');
+      chasingStar.classList.add('chasing-star');
+      chasingStar.style.width = "100px";
+      chasingStar.style.height = "100px";
+      chasingStar.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Star_of_David.svg/800px-Star_of_David.svg.png')";
+      chasingStar.style.backgroundSize = "cover";
       chasingStar.style.left = mouseX - 50 + 'px';
       chasingStar.style.top = mouseY - 50 + 'px';
+      document.body.appendChild(chasingStar);
 
       // Make the star appear to follow the cursor
       chasingStar.style.transform = 'scale(1.2)';
       setTimeout(() => {
         chasingStar.style.transform = 'scale(1)';
+        setTimeout(() => {
+          chasingStar.remove(); // Remove the chasing element after animation
+        }, 300);
       }, 200);
     });
-
   </script>
 
 </body>

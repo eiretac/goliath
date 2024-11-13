@@ -1,173 +1,155 @@
-/* General reset for margin, padding, and box-sizing */
+/* Reset default styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Background with a dark, high-tech, military feel */
+/* Dark background with gradients for a more futuristic look */
 body {
-  font-family: 'Courier New', monospace;
-  background-color: #1a1a1a; /* Dark background */
-  color: #ffcc00; /* Bright yellow for high visibility */
+  font-family: 'Roboto', sans-serif;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.9) 0%, rgba(34, 34, 34, 1) 70%);
+  color: #ffffff;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   overflow: hidden;
-  background: linear-gradient(135deg, #333333, #1a1a1a);
+  transition: background 0.5s ease;
 }
 
-/* Container for login form with metallic, high-security feel */
+/* Main login container */
 .container {
-  background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent black for high-tech look */
-  border: 3px solid #ffcc00; /* Yellow border for emphasis */
-  border-radius: 12px;
-  padding: 40px;
-  width: 320px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
   text-align: center;
-  box-shadow: 0px 0px 25px rgba(255, 204, 0, 0.8); /* Glowing border */
-  backdrop-filter: blur(10px); /* Adding a blur effect for modern touch */
+  max-width: 400px;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
 }
 
-/* Style the input fields with industrial feel */
+/* Logo (if applicable) */
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3em;
+  color: #fff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+/* Input fields */
 .input-field {
-  background-color: #333333;
-  border: 2px solid #ffcc00;
-  color: #ffcc00;
-  padding: 12px;
-  margin: 15px 0;
   width: 100%;
-  border-radius: 6px;
-  outline: none;
-  font-size: 16px;
-  font-family: 'Courier New', monospace;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: 2px solid #333;
+  border-radius: 5px;
+  background: transparent;
+  color: #fff;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover effect for input fields with a tech glow */
+/* Glitch effect on input focus */
 .input-field:focus {
-  border-color: #00ff00;
-  box-shadow: 0 0 10px #00ff00;
-  background-color: #222222;
+  outline: none;
+  border-color: #0f0;
+  animation: glitch 1.5s infinite;
 }
 
-/* Style the login button */
-.login-btn {
-  background-color: #ffcc00;
-  color: #1a1a1a;
-  padding: 14px;
-  margin-top: 20px;
-  width: 100%;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-family: 'Courier New', monospace;
-  transition: transform 0.3s ease;
-}
-
-/* Add hover effect to the login button */
-.login-btn:hover {
+/* Hover effect on inputs */
+.input-field:hover {
   transform: scale(1.05);
-  box-shadow: 0px 0px 20px rgba(255, 204, 0, 0.8);
-  background-color: #ff9900; /* Slightly darker hover effect */
 }
 
-/* Flashing animation for the button to indicate urgency */
-@keyframes flashing {
-  0% {
-    background-color: #ffcc00;
-  }
-  50% {
-    background-color: #ff9900;
-  }
-  100% {
-    background-color: #ffcc00;
-  }
+/* Button (for submitting) */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: linear-gradient(45deg, #0a0a0a, #ff00cc);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-/* Add flashing effect to button */
-.login-btn.flash {
-  animation: flashing 1.5s infinite;
+/* Button hover effect */
+button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #ff00cc, #ff4400);
 }
 
-/* Error message style */
-#errorMessage {
-  display: none;
-  color: #ff0000;
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-/* Keyframes for a glitch effect (important security messages) */
+/* Glitch effect animation */
 @keyframes glitch {
   0% {
-    text-shadow: 0 0 4px #ffcc00, 0 0 8px #ffcc00, 0 0 12px #ffcc00;
+    text-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #ff00ff;
+    transform: translateX(-2px);
   }
-  20% {
-    text-shadow: -2px 2px 3px #ffcc00, 2px -2px 5px #ffcc00, -2px 2px 10px #ffcc00;
+  25% {
+    text-shadow: -2px -2px 0px #ff0000, 2px 2px 0px #ff00ff;
+    transform: translateX(2px);
   }
-  40% {
-    text-shadow: 0 0 4px #ffcc00, 0 0 8px #ffcc00, 0 0 12px #ffcc00;
+  50% {
+    text-shadow: 2px -2px 0px #ff0000, -2px 2px 0px #ff00ff;
+    transform: translateX(-2px);
   }
-  60% {
-    text-shadow: 2px 2px 3px #ffcc00, -2px -2px 5px #ffcc00, 2px 2px 10px #ffcc00;
-  }
-  80% {
-    text-shadow: 0 0 4px #ffcc00, 0 0 8px #ffcc00, 0 0 12px #ffcc00;
+  75% {
+    text-shadow: -2px 2px 0px #ff0000, 2px -2px 0px #ff00ff;
+    transform: translateX(2px);
   }
   100% {
-    text-shadow: 0 0 4px #ffcc00, 0 0 8px #ffcc00, 0 0 12px #ffcc00;
+    text-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #ff00ff;
+    transform: translateX(-2px);
   }
 }
 
-/* Glitch effect for critical messages */
-.glitch-effect {
-  color: #ffcc00;
+/* Error message for invalid login */
+#errorMessage {
+  display: none;
+  background-color: #f44336;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 1em;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Glitchy effect on error message */
+#errorMessage.glitch {
   animation: glitch 1.5s infinite;
-  text-shadow: 0 0 4px #ffcc00, 0 0 8px #ffcc00, 0 0 12px #ffcc00;
+  opacity: 1;
 }
 
-/* High-tech looking border effect */
-.container {
-  border: 3px solid #ffcc00;
-  box-shadow: 0px 0px 25px rgba(255, 204, 0, 0.8);
+/* Subtle animation on the container */
+.container:hover {
+  transform: scale(1.05);
 }
 
-/* Background with a technological pattern */
-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('https://www.transparenttextures.com/patterns/noise.png');
-  opacity: 0.05;
-  pointer-events: none;
-}
-
-/* Styling for the login form text */
-h1 {
-  font-size: 28px;
-  color: #ffcc00;
-  margin-bottom: 30px;
-  letter-spacing: 1px;
-  font-family: 'Courier New', monospace;
-}
-
-/* Responsive adjustments for small screens */
-@media (max-width: 480px) {
+/* Media Queries for responsiveness */
+@media (max-width: 600px) {
   .container {
-    width: 85%;
-    padding: 25px;
+    padding: 20px;
+    max-width: 90%;
+  }
+  
+  h1 {
+    font-size: 2em;
   }
 
-  .input-field {
-    font-size: 14px;
-  }
-
-  .login-btn {
-    font-size: 16px;
+  .input-field, button {
+    font-size: 1em;
+    padding: 10px;
   }
 }

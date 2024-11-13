@@ -1,63 +1,39 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/ZopLogoInvert.png" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="styles.css"
-    />
-    <script defer src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="__next">
-      <div class="SignIn_container__35cKP">
-        <div class="SignIn_matrix__A2uRA"></div>
-        <div class="SignIn_overlay__AyHRI"></div>
-        <div class="SignIn_card__EMFYY">
-          <div class="SignIn_banner__qkhbw">
-            TOP SECRET // AUTHORIZED ACCESS ONLY
-          </div>
-          <img src="/apollo_logo.png" alt="Apollo Logo" class="SignIn_logo__0tEef" />
-          <h1 class="SignIn_title__VvTrW">APOLLO</h1>
-          <p class="SignIn_subtitle__ycq6C">Secure Login</p>
-          
-          <form id="loginForm" action="#" onsubmit="return validateLogin(event)">
-            <input
-              type="text"
-              id="username"
-              placeholder="Username"
-              required
-              class="inputField"
-            />
-            <input
-              type="password"
-              id="password"
-              placeholder="Password"
-              required
-              class="inputField"
-            />
-            <button
-              type="submit"
-              class="SignIn_signInButton__QoGFF"
-            >
-              Begin Authentication
-            </button>
-          </form>
-
-          <div id="errorMessage" class="errorMessage" style="display: none;">
-            Invalid username or password. Please try again.
-          </div>
-
-          <p class="SignIn_footerText__s8MuU">
-            SYSTEM MONITORING ACTIVE. ALL ACCESS IS LOGGED AND TRACKED.
-          </p>
+    <div class="login-container">
+      <div class="login-card">
+        <img src="/apollo_logo.png" alt="Apollo Logo" class="logo" />
+        <h1 class="title glitch-effect">APOLLO</h1>
+        <p class="subtitle">Secure Login</p>
+        <form id="loginForm" onsubmit="return validateLogin(event)">
+          <input
+            type="text"
+            id="username"
+            placeholder="Username"
+            required
+            class="input-field"
+          />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+            class="input-field"
+          />
+          <button type="submit" class="login-btn">Begin Authentication</button>
+        </form>
+        <div id="errorMessage" class="error-message">
+          Invalid username or password. Please try again.
         </div>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

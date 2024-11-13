@@ -8,20 +8,20 @@
   <script src="goliath.js" defer></script>
 </head>
 <body>
-  <!-- Red Background with Urgency -->
+  <!-- Banner for Urgency -->
   <div class="banner">
     <h1>Goliath's Goodbye</h1>
     <p>Status: <strong>Ready for Launch</strong></p>
     <p>Countdown: <span id="countdown">00:00:10</span></p>
   </div>
 
-  <!-- Target Email and Launch Code Section -->
+  <!-- Input Fields and LAUNCH Button -->
   <div class="input-section">
     <label for="email">Target Email:</label>
-    <input type="email" id="email" placeholder="Enter target email..." required />
+    <input type="email" id="email" placeholder="Enter Target Email" required />
     
     <label for="launchCode">Launch Code:</label>
-    <input type="password" id="launchCode" placeholder="Enter launch code..." required />
+    <input type="password" id="launchCode" placeholder="Enter Launch Code" required />
     
     <button class="launch-button" id="launchButton" onclick="confirmLaunch()">LAUNCH</button>
   </div>
@@ -53,12 +53,12 @@
       // Check for valid input and show a confirmation prompt
       if (email && launchCode) {
         const confirmation = confirm('Are you sure you want to launch the nuclear payload? This action is irreversible.');
-        
+
         if (confirmation) {
           launchNuke(email);
         }
       } else {
-        alert('Please provide both a valid email and launch code.');
+        alert('Please provide a valid email address and launch code.');
       }
     }
 
@@ -67,7 +67,7 @@
       const audio = document.getElementById('nukeAudio');
       
       audio.play();
-      alert('Nuke has been launched to ' + email);
+      alert('The nuclear payload has been launched to ' + email);
     }
   </script>
 </body>

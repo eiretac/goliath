@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goodbye Goliath</title>
+  <link rel="stylesheet" href="goliath.css">
+  <script defer src="goliath.js"></script>
+</head>
+<body>
+  <!-- Nuclear Football Panel -->
+  <div class="container">
+    <h1>Goliath's Goodbye</h1>
+    <p class="subtitle">Mission: Launch the final strike.</p>
+
+    <div class="control-panel">
+      <h2>Command Center</h2>
+
+      <!-- Countdown Timer -->
+      <div class="countdown">
+        <p>Time until launch:</p>
+        <p id="countdownTimer" class="timer">00:05:00</p>
+      </div>
+
+      <!-- Launch Code Input -->
+      <div class="launch-code">
+        <label for="launchCode">Enter Launch Code:</label>
+        <input type="text" id="launchCode" placeholder="Enter Launch Code">
+      </div>
+
+      <!-- Launch Button -->
+      <button id="launchButton" class="launch-btn" disabled>Launch Goliath</button>
+
+      <div class="confirmation">
+        <p id="statusMessage"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio element to play sound when launched -->
+  <audio id="launchAudio" src="launch-sound.mp3"></audio>
+</body>
+</html>

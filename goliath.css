@@ -124,10 +124,11 @@ input:focus {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  animation: flashBackground 1s infinite; /* Flashing effect */
 }
 
 .popup-content {
-  background-color: #34495e;
+  background-color: #4c7ead;
   padding: 30px;
   border-radius: 10px;
   text-align: center;
@@ -162,6 +163,13 @@ input:focus {
 .popup button:focus {
   outline: none;
   box-shadow: 0 0 15px rgba(231, 76, 60, 1);
+}
+
+/* Flashing Background Animation */
+@keyframes flashBackground {
+  0% { background-color: rgba(178, 28, 28, 1); }
+  50% { background-color: rgba(255, 0, 0, 1); }
+  100% { background-color: rgba(178, 28, 28, 1); }
 }
 
 /* Glitchy animation on the button */

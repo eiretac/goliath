@@ -3,72 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Goliath's Goodbye - Launch</title>
+  <title>Goliath's Goodbye</title>
   <link rel="stylesheet" href="goliath.css">
-  <script src="goliath.js" defer></script>
+  <script defer src="goliath.js"></script>
 </head>
 <body>
-  <!-- Banner for Urgency -->
-  <div class="banner">
-    <h1>Goliath's Goodbye</h1>
-    <p>Status: <strong>Ready for Launch</strong></p>
-    <p>Countdown: <span id="countdown">00:00:10</span></p>
+  <!-- Goliath's Goodbye Page -->
+  <div class="container">
+    <div class="header">
+      <h1>Goliath's Goodbye</h1>
+      <p class="subheader">Final Countdown to the End</p>
+    </div>
+
+    <div class="content">
+      <div class="input-section">
+        <label for="email">Target Email:</label>
+        <input type="email" id="email" placeholder="Enter Target Email" required>
+      </div>
+
+      <div class="input-section">
+        <label for="code">Launch Code:</label>
+        <input type="password" id="code" placeholder="Enter Launch Code" required>
+      </div>
+
+      <button class="launch-button" id="launchButton">LAUNCH</button>
+    </div>
+
+    <!-- Confirmation Popup -->
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <h2>Are you sure you want to launch?</h2>
+        <button id="confirmLaunch">YES, LAUNCH</button>
+        <button id="cancelLaunch">CANCEL</button>
+      </div>
+    </div>
+
+    <!-- Sound Effects -->
+    <audio id="background-sound" src="background-hum.mp3" loop autoplay></audio>
   </div>
-
-  <!-- Input Fields and LAUNCH Button -->
-  <div class="input-section">
-    <label for="email">Target Email:</label>
-    <input type="email" id="email" placeholder="Enter Target Email" required />
-    
-    <label for="launchCode">Launch Code:</label>
-    <input type="password" id="launchCode" placeholder="Enter Launch Code" required />
-    
-    <button class="launch-button" id="launchButton" onclick="confirmLaunch()">LAUNCH</button>
-  </div>
-
-  <!-- Audio Section -->
-  <div class="audio-section">
-    <audio id="nukeAudio" src="explosion.mp3"></audio>
-  </div>
-
-  <script>
-    // Countdown Timer Functionality
-    let countdownTime = 120; // Start countdown at 10 seconds
-    const countdownDisplay = document.getElementById('countdown');
-
-    const countdown = setInterval(function () {
-      countdownDisplay.textContent = `00:00:${countdownTime < 10 ? '0' + countdownTime : countdownTime}`;
-      countdownTime--;
-
-      if (countdownTime < 0) {
-        clearInterval(countdown);
-      }
-    }, 1000);
-
-    // Launch Confirmation
-    function confirmLaunch() {
-      const email = document.getElementById('email').value;
-      const launchCode = document.getElementById('launchCode').value;
-
-      // Check for valid input and show a confirmation prompt
-      if (email && launchCode) {
-        const confirmation = confirm('Are you sure you want to launch Goliath? This action is irreversible.');
-
-        if (confirmation) {
-          launchNuke(email);
-        }
-      } else {
-        alert('Please provide a valid email address and launch code.');
-      }
-    }
-
-    // Launch Nuke (Audio Play + Redirect)
-    function launchNuke(email) {
-      const audio = document.getElementById('nukeAudio');
-      
-      audio.play();
-      alert('The Goliath has been launched to ' + email);
-    }
-  </script>
 </body>
 </html>

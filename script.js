@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
       errorMessage.style.display = 'block'; // Make the error message visible
       errorMessage.classList.add('glitch'); // Add the glitch effect class
       setTimeout(() => {
-        // After a short delay, hide the error message (you can adjust the timing)
+        // After a short delay, hide the error message
         errorMessage.style.display = 'none';
         errorMessage.classList.remove('glitch'); // Remove the glitch effect class
       }, 3000); // Hide after 3 seconds

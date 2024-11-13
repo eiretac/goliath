@@ -1,101 +1,13 @@
-/* Base Styling */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* General Styling */
 body {
-  font-family: 'Courier New', Courier, monospace;
-  background-color: #0a0a0a;
-  color: #00ff00;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.login-box {
-  background: rgba(0, 0, 0, 0.8);
-  padding: 40px;
-  border-radius: 10px;
-  border: 2px solid #00ff00;
-  width: 300px;
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
-}
-
-h1 {
-  color: #00ff00;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.input-container {
-  margin-bottom: 20px;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  background: #333;
-  border: 1px solid #444;
-  border-radius: 5px;
-  color: #00ff00;
-  outline: none;
-}
-
-input:focus {
-  border-color: #00ff00;
-  box-shadow: 0 0 5px #00ff00;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  font-size: 18px;
-  background-color: #00ff00;
-  color: #0a0a0a;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background-color: #008f00;
-}
-
-.error-message {
-  display: none;
-  color: red;
-  text-align: center;
-  font-size: 14px;
-  margin-top: 10px;
-  font-style: italic;
-}
-
-/* Glitch effect on error message */
-.error-message.glitch {
-  animation: glitch 1s infinite;
-}
-
-@keyframes glitch {
-  0% { transform: translateX(0) skewX(0deg); }
-  20% { transform: translateX(2px) skewX(5deg); }
-  40% { transform: translateX(-3px) skewX(-5deg); }
-  60% { transform: translateX(3px) skewX(3deg); }
-  80% { transform: translateX(-2px) skewX(-3deg); }
-  100% { transform: translateX(0) skewX(0deg); }
+  min-height: 100vh;
+  background-color: #111827;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
 }
 
 /* Warning Banner Styling */
@@ -125,4 +37,79 @@ button:hover {
     background-color: #8b0000;
     color: #ffcccc;
   }
+}
+
+/* Container Styling */
+.container {
+  background-color: #1e3a5f; /* Navy blue color */
+  padding: 40px;
+  border-radius: 8px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  position: relative;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Logo Styling */
+.logo img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+/* Heading Styling */
+.container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #b0c4de;
+}
+
+/* Form Input Styling */
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #d1d5db;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #1c2b48;
+  border: 1px solid #4a5568;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #4b9cd3;
+}
+
+/* Button Styling */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #4b9cd3;
+  color: #ffffff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #3a8bb0;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }

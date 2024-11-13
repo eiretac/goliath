@@ -1,7 +1,7 @@
 /* General Styles */
 body {
   font-family: 'Roboto', sans-serif;
-  background: #1e1e1e; /* Dark background for urgency */
+  background: #1e1e1e;
   color: #fff;
   margin: 0;
   padding: 0;
@@ -10,155 +10,134 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  box-sizing: border-box;
   overflow: hidden;
 }
 
-/* Banner Styles */
-.banner {
-  background-color: #2c3e50; /* Dark gray background for banner */
-  color: #fff;
+/* Header Styles */
+.header {
   text-align: center;
-  padding: 30px;
-  width: 100%;
-  box-sizing: border-box;
-  animation: flash 2s infinite alternate; /* Flashing effect */
 }
 
-.banner h1 {
+.header h1 {
+  color: #f5f5f5;
   font-size: 3em;
-  font-weight: bold;
   margin-bottom: 10px;
-  font-family: 'Arial', sans-serif;
 }
 
-.banner p {
-  font-size: 1.5em;
-}
-
-.banner .countdown {
+.subheader {
+  font-size: 1.2em;
   color: #e74c3c;
-  font-size: 2.5em;
-  font-weight: bold;
-  animation: flash-countdown 1s infinite alternate;
 }
 
-/* Input Section */
+/* Content Styles */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .input-section {
-  margin-top: 30px;
-  padding: 20px;
-  width: 90%;
-  max-width: 500px;
-  background-color: #34495e;
-  border-radius: 10px;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.input-section label {
-  display: block;
-  font-size: 1.2em;
   margin: 10px 0;
-  font-family: 'Arial', sans-serif;
 }
 
-.input-section input {
-  width: 100%;
-  padding: 15px;
-  font-size: 1.2em;
+input {
+  padding: 10px;
+  font-size: 1em;
   background-color: #2c3e50;
-  border: 2px solid #34495e;
+  border: none;
   color: #fff;
   border-radius: 5px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
+  margin-top: 5px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.8);
 }
 
-.input-section input:focus {
+input:focus {
   outline: none;
-  border-color: #e74c3c;
+  box-shadow: 0 0 15px rgba(231, 76, 60, 1);
+  border: 2px solid #e74c3c;
 }
 
-/* Launch Button */
 .launch-button {
   background-color: #e74c3c;
-  color: white;
-  font-size: 2.5em;
-  padding: 40px;
+  color: #fff;
+  font-size: 1.5em;
+  padding: 20px;
   border: none;
-  border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(231, 76, 60, 1);
   transition: all 0.3s ease;
 }
 
 .launch-button:hover {
   background-color: #c0392b;
   transform: scale(1.1);
-  animation: pulse 1s infinite alternate;
+  box-shadow: 0 0 30px rgba(231, 76, 60, 1);
 }
 
-/* Audio section */
-.audio-section {
+.launch-button:focus {
+  outline: none;
+  box-shadow: 0 0 30px rgba(231, 76, 60, 1);
+}
+
+/* Popup Styles */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #34495e;
+  padding: 30px;
+  border-radius: 10px;
   text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.popup h2 {
+  color: #e74c3c;
+  font-size: 1.8em;
+}
+
+.popup button {
+  background-color: #e74c3c;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
   margin-top: 20px;
+  border-radius: 5px;
 }
 
-/* Countdown Timer */
-#countdown {
-  font-size: 3em;
-  margin-top: 20px;
-  color: #ffffff;
-  font-weight: bold;
+.popup button:hover {
+  background-color: #c0392b;
 }
 
-/* Flashing Animations */
-@keyframes flash {
-  0% {
-    background-color: #2c3e50;
-    color: #fff;
-  }
-  100% {
-    background-color: #e74c3c;
-    color: #fff;
-  }
+/* Glitchy animation on the button */
+@keyframes glitch {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
 }
 
-@keyframes flash-countdown {
-  0% {
-    color: #fff;
-  }
-  100% {
-    color: #e74c3c;
-  }
+.launch-button:hover {
+  animation: glitch 0.5s infinite;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.2);
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  .banner h1 {
-    font-size: 2.5em;
-  }
-
-  .input-section {
-    padding: 15px;
-    width: 90%;
-  }
-
-  .launch-button {
-    font-size: 1.8em;
-    padding: 30px;
-  }
-
-  #countdown {
-    font-size: 2em;
-  }
+/* Background sound */
+#background-sound {
+  display: none;
 }

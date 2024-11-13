@@ -21,6 +21,8 @@
       color: #ffffff;
       overflow: hidden;
       position: relative;
+      background: url('your-dark-background-image.jpg') no-repeat center center fixed; /* Dark and eerie background */
+      background-size: cover;
     }
 
     /* Warning Banner Styling */
@@ -30,7 +32,7 @@
       text-align: center;
       font-weight: bold;
       padding: 10px;
-      font-size: 18px;
+      font-size: 22px;
       font-family: 'Courier New', Courier, monospace;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -52,32 +54,8 @@
       }
     }
 
-    /* Page Container */
-    .page-container {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Container Styling */
-    .container {
-      background-color: #1e3a5f; /* Navy blue color */
-      padding: 40px;
-      border-radius: 8px;
-      width: 360px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-      animation: fadeIn 0.6s ease;
-      position: relative;
-    }
-
-    /* Logo Styling */
-    .logo img {
-      width: 100px;
-      margin-bottom: 20px;
-    }
-
-    /* Heading Styling */
-    h1.glitch {
+    /* Glitch Effect for Text */
+    .glitch {
       font-size: 36px;
       color: #ff4c4c;
       font-family: 'Courier New', Courier, monospace;
@@ -85,7 +63,6 @@
       animation: glitch 1.5s infinite;
     }
 
-    /* Glitch Effect for Text */
     @keyframes glitch {
       0% {
         transform: translateX(0);
@@ -113,30 +90,9 @@
       }
     }
 
-    /* Countdown Bar */
-    .countdown-bar {
-      width: 100%;
-      height: 5px;
-      background-color: #333;
-      margin-top: 20px;
-    }
-
-    .countdown-bar .progress {
-      height: 100%;
-      background-color: #ff4c4c;
-      width: 100%;
-      animation: countdown-progress 10s linear forwards;
-    }
-
-    @keyframes countdown-progress {
-      0% { width: 100%; }
-      100% { width: 0; }
-    }
-
     /* Return Button Styling */
     .return-btn {
-      width: 100%;
-      padding: 12px;
+      padding: 12px 30px;
       background-color: #4b9cd3;
       color: #ffffff;
       font-size: 16px;
@@ -165,26 +121,6 @@
       animation: shake 0.5s ease-in-out;
     }
 
-    /* Page Background Shadow (moving) */
-    body:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('shadow-image.png') no-repeat center center fixed;
-      background-size: cover;
-      z-index: -1;
-      animation: move-shadow 5s infinite;
-    }
-
-    @keyframes move-shadow {
-      0% { transform: translate(0, 0); }
-      50% { transform: translate(10px, 10px); }
-      100% { transform: translate(0, 0); }
-    }
-
     /* Background Flicker */
     @keyframes flicker {
       0% { background-color: rgba(0, 0, 0, 0.9); }
@@ -195,7 +131,6 @@
     body {
       animation: flicker 0.3s infinite;
     }
-
   </style>
 </head>
 <body>
@@ -205,30 +140,19 @@
   </audio>
 
   <!-- Page Content -->
-  <div class="page-container">
-    <div class="warning-banner">
-      WARNING: Unauthorized Access is Prohibited
-    </div>
+  <div class="warning-banner">
+    WARNING: Unauthorized Access is Prohibited
+  </div>
 
-    <div class="container">
-      <div class="logo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Star_of_David.svg/800px-Star_of_David.svg.png" alt="Star of David" />
-      </div>
-      
-      <h1 class="glitch">404 - Forbidden</h1>
-      
-      <div class="countdown-bar">
-        <div class="progress"></div>
-      </div>
-
-      <button class="return-btn" onclick="returnToSafety()">Return to Safety</button>
-    </div>
+  <!-- Main Content -->
+  <div style="text-align: center; z-index: 1;">
+    <h1 class="glitch">404 - Forbidden</h1>
+    <button class="return-btn" onclick="returnToSafety()">Return to Safety</button>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const audioElement = document.getElementById('audio');
-      const progressBar = document.querySelector('.progress');
       
       // Trigger audio play with user interaction
       function returnToSafety() {
@@ -244,15 +168,6 @@
           window.location.href = '/';
         }, 3000);
       }
-
-      // Simulate countdown and shadow effect
-      let countdown = 10; // 10 seconds countdown
-      const countdownInterval = setInterval(function() {
-        countdown--;
-        if (countdown <= 0) {
-          clearInterval(countdownInterval);
-        }
-      }, 1000);
     });
   </script>
 </body>

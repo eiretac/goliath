@@ -3,47 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Goliath's Goodbye</title>
+  <title>Goliath's Goodbye - Launch</title>
   <link rel="stylesheet" href="goliath.css">
-  <script defer src="goliath.js"></script>
+  <script src="goliath.js" defer></script>
 </head>
 <body>
-  <!-- Nuclear Football Panel -->
-  <div class="container">
-    <h1>EMERGENCY RESPONSE: GOLIATH'S GOODBYE</h1>
-    <p class="subtitle">FINAL STRIKE INITIATED. DO NOT FAIL.</p>
-
-    <div class="control-panel">
-      <h2>Command Center</h2>
-
-      <!-- Countdown Timer -->
-      <div class="countdown">
-        <p>Time until launch:</p>
-        <p id="countdownTimer" class="timer">00:05:00</p>
-      </div>
-
-      <!-- Launch Code Input -->
-      <div class="launch-code">
-        <label for="launchCode">Enter Launch Code:</label>
-        <input type="text" id="launchCode" placeholder="Enter Launch Code">
-      </div>
-
-      <!-- Target Email Input -->
-      <div class="target-email">
-        <label for="targetEmail">Target Email:</label>
-        <input type="email" id="targetEmail" placeholder="Enter Target Email">
-      </div>
-
-      <!-- LAUNCH Button -->
-      <button id="launchButton" class="launch-btn" disabled>LAUNCH</button>
-
-      <div class="confirmation">
-        <p id="statusMessage"></p>
-      </div>
-    </div>
+  <!-- Banner for Agent -->
+  <div class="banner">
+    <h1>Goliath's Goodbye</h1>
+    <p>Status: <strong>Ready for Launch</strong></p>
+    <p>Countdown: <span id="countdown">00:00:10</span></p>
   </div>
 
-  <!-- Audio element to play sound when launched -->
-  <audio id="launchAudio" src="launch-sound.mp3"></audio>
+  <!-- Email and Command Section -->
+  <div class="input-section">
+    <input type="email" id="email" placeholder="Enter target email..." required />
+    <button class="launch-button" id="launchButton" onclick="launchNuke()">LAUNCH</button>
+  </div>
+
+  <!-- Audio Section -->
+  <div class="audio-section">
+    <audio id="nukeAudio" src="explosion.mp3"></audio>
+  </div>
+
+  <script>
+    // Countdown Timer Functionality
+    let countdownTime = 10; // Start countdown at 10 seconds
+    const countdownDisplay = document.getElementById('countdown');
+
+    const countdown = setInterval(function () {
+      countdownDisplay.textContent = `00:00:${countdownTime < 10 ? '0' + countdownTime : countdownTime}`;
+      countdownTime--;
+
+      if (countdownTime < 0) {
+        clearInterval(countdown);
+      }
+    }, 1000);
+
+    // Launch Nuke (Audio Play + Redirect)
+    function launchNuke() {
+      const email = document.getElementById('email').value;
+      const audio = document.getElementById('nukeAudio');
+      
+      if (email) {
+        audio.play();
+        alert('Nuke has been launched to ' + email);
+      } else {
+        alert('Please enter a valid email!');
+      }
+    }
+  </script>
 </body>
 </html>

@@ -16,7 +16,7 @@
     <p>Time Until Mission: <span class="countdown">00:05:32</span></p>
   </div>
 
-  <!-- Agent Levels and Mission Update -->
+  <!-- Agent levels and mission update -->
   <div class="levels">
     <h3>Agent Levels</h3>
     <ul>
@@ -27,7 +27,7 @@
     </ul>
   </div>
 
-  <!-- Mission Updates Section -->
+  <!-- Documents and updates section -->
   <div class="mission-updates">
     <h2>Mission Updates</h2>
     <ul>
@@ -46,15 +46,17 @@
   <!-- Command Console -->
   <div class="console">
     <h3>Command Center</h3>
-    <textarea id="consoleInput" placeholder="Enter secret commands here..." rows="4"></textarea>
-    <input type="password" id="secretKey" placeholder="Enter Security Key..." class="secret-input" />
+    <textarea id="consoleInput" placeholder="Type your secret command here..." rows="4"></textarea>
     <button onclick="executeCommand()">Execute Command</button>
     <p id="commandOutput"></p>
+
+    <!-- Secret Code input -->
+    <input type="password" class="secret-input" placeholder="Enter secret code..." />
   </div>
 
   <!-- Hidden Easter Egg -->
   <div class="hidden-eggs">
-    <button onclick="alert('Goyim')">Try to Lock the Secret Code</button>
+    <button onclick="alert('Code Word for Mission: Illuminati!')">Try to Lock the Secret Code</button>
   </div>
 </body>
 </html>

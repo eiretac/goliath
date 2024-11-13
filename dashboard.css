@@ -1,8 +1,8 @@
 /* General Styles */
 body {
   font-family: 'Roboto', sans-serif;
-  background: #121212; /* Dark background */
-  color: #f1f1f1; /* Light text color */
+  background: #1e1e1e;
+  color: #fff;
   margin: 0;
   padding: 0;
   display: flex;
@@ -12,28 +12,27 @@ body {
 }
 
 h1, h3 {
-  color: #ecf0f1; /* Light grayish-white for header text */
+  color: #f5f5f5;
 }
 
 /* Banner Styles */
 .banner {
-  background-color: #1a1a1a; /* Slightly darker shade of black */
-  color: #ecf0f1;
+  background-color: #2c3e50;
+  color: #fff;
   text-align: center;
   padding: 20px;
   width: 100%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8); /* Soft shadow for a more 3D effect */
 }
 
 .banner h1 {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 .banner .countdown {
-  color: #e74c3c; /* Red for urgency */
-  font-size: 1.8em;
+  color: #e74c3c;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
@@ -42,14 +41,12 @@ h1, h3 {
   margin-top: 40px;
   padding: 20px;
   width: 80%;
-  background-color: #1d1f22; /* Darker background */
+  background-color: #34495e;
   border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Light shadow */
 }
 
 .levels h3 {
   margin-bottom: 10px;
-  color: #bdc3c7; /* Light gray for subheadings */
 }
 
 .levels ul {
@@ -58,16 +55,12 @@ h1, h3 {
 }
 
 .levels ul li {
-  padding: 8px 0;
-  border-bottom: 1px solid #34495e; /* Subtle gray border */
-  text-transform: uppercase;
-  font-size: 1.1em;
+  padding: 5px 0;
 }
 
 .levels ul li:hover {
-  background-color: #34495e; /* Soft dark blue-gray */
+  background-color: #2c3e50;
   cursor: pointer;
-  color: #fff;
 }
 
 /* Mission Updates Section */
@@ -75,14 +68,12 @@ h1, h3 {
   margin-top: 40px;
   padding: 20px;
   width: 80%;
-  background-color: #1d1f22; /* Same dark background for consistency */
+  background-color: #34495e;
   border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .mission-updates h2 {
   margin-bottom: 10px;
-  color: #bdc3c7; /* Light gray for headings */
 }
 
 .mission-updates ul {
@@ -91,17 +82,15 @@ h1, h3 {
 }
 
 .mission-updates ul li {
-  padding: 12px;
-  background-color: #2c3e50; /* Darker shade with a hint of blue */
+  padding: 10px;
+  background-color: #2c3e50;
   margin-bottom: 10px;
   border-radius: 5px;
-  font-weight: bold;
 }
 
 .mission-updates ul li:hover {
-  background-color: #e74c3c; /* Red accent on hover */
+  background-color: #e74c3c;
   cursor: pointer;
-  color: #fff;
 }
 
 /* World Map Section */
@@ -114,60 +103,70 @@ h1, h3 {
   width: 100%;
   max-width: 800px;
   border: 2px solid #34495e;
-  border-radius: 8px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4); /* Soft shadow for map */
 }
 
-/* Console Section */
+/* Console Section (CMD-like) */
 .console {
   margin-top: 40px;
   width: 80%;
-  background-color: #212121; /* Darker background for contrast */
+  background-color: #1c1c1c; /* Very dark gray background for terminal look */
   padding: 30px;
   border-radius: 8px;
-  text-align: center;
+  text-align: left; /* Align text to left for command input */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+  color: #00FF00; /* Bright green text like in old terminals */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for terminal effect */
+  font-size: 1.1em;
+}
+
+.console h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
 }
 
 .console textarea {
   width: 100%;
   padding: 12px;
-  background-color: #2c3e50; /* Slightly dark with blue-gray tint */
-  color: #fff;
+  background-color: #1c1c1c;
+  color: #00FF00; /* Bright green text for commands */
   border: 1px solid #34495e;
   border-radius: 5px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.1em;
   resize: none;
+  line-height: 1.6;
+  white-space: nowrap;
+  overflow-x: auto; /* Prevent wrapping, allow horizontal scrolling */
+  height: 200px; /* Set fixed height for the console input */
 }
 
-.console .secret-input {
-  margin-top: 15px;
-  width: 100%;
-  padding: 12px;
-  background-color: #2c3e50; /* Same blue-gray */
-  color: #fff;
-  border: 1px solid #34495e;
-  border-radius: 5px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1.1em;
-}
-
-/* Buttons */
 .console button {
   margin-top: 20px;
   padding: 12px 25px;
-  background-color: #16a085; /* Teal accent for buttons */
+  background-color: #16a085; /* Teal accent for execute button */
   border: none;
   color: #fff;
   cursor: pointer;
-  font-size: 1.2em;
+  font-size: 1.1em;
   text-transform: uppercase;
   border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .console button:hover {
   background-color: #1abc9c; /* Lighter teal for hover effect */
+}
+
+/* Secret Code Input */
+.console .secret-input {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #1c1c1c;
+  color: #00FF00; /* Bright green text for the secret code */
+  border: 1px solid #34495e;
+  border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1em;
 }
 
 /* Easter Egg Button */
@@ -176,28 +175,13 @@ h1, h3 {
 }
 
 .hidden-eggs button {
-  padding: 12px 30px;
-  background-color: #8e44ad; /* Purple for hidden button */
+  padding: 10px 20px;
+  background-color: #8e44ad;
   color: #fff;
   border: none;
   cursor: pointer;
-  font-size: 1.1em;
-  text-transform: uppercase;
-  border-radius: 5px;
 }
 
 .hidden-eggs button:hover {
   background-color: #9b59b6;
-}
-
-/* Additional Refinements */
-input[type="password"] {
-  padding: 12px;
-  width: 80%;
-  background-color: #2c3e50;
-  color: #fff;
-  border: 1px solid #34495e;
-  border-radius: 5px;
-  margin-top: 10px;
-  font-size: 1.1em;
 }

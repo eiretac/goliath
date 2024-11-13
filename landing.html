@@ -1,53 +1,46 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>מסך הבית</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>WEF Dashboard - Agenda 2030</title>
   <link rel="stylesheet" href="landing.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">לוגו</div>
-    <nav>
-      <a href="#">דוקומנטים</a>
-      <a href="#">הגדרות</a>
-      <a href="#">יציאה</a>
-    </nav>
-  </nav>
+  <div class="warning-banner">
+    WARNING: TOP SECRET, AGENDA 2030 ACTIVATED
+  </div>
 
-  <div class="container">
-    <h1>ברוך הבא למערכת</h1>
-    <p class="intro">כאן תוכל לגשת לדוקומנטים מאובטחים ולהתחיל עבודה.</p>
-
-    <div class="documents">
-      <h2>דוקומנטים זמינים</h2>
-      <div class="document-list">
-        <div class="document">
-          <h3>מסמך 1</h3>
-          <button>גשת לדוקומנט</button>
-        </div>
-        <div class="document">
-          <h3>מסמך 2</h3>
-          <button>גשת לדוקומנט</button>
-        </div>
-      </div>
+  <div class="content">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/World_Economic_Forum_Logo_2021.svg/1024px-World_Economic_Forum_Logo_2021.svg.png" alt="WEF Logo" />
     </div>
 
-    <div class="secure-actions">
-      <h2>פעולות מאובטחות</h2>
-      <button>גשת לאזור מאובטח</button>
-      <button>צור דוח</button>
+    <h1 class="headline">Welcome to the Global Control Dashboard</h1>
+
+    <div class="classified-docs">
+      <button class="doc-btn">Access Agenda 2030 Files</button>
+      <button class="doc-btn">Sustainable Development Master Plan</button>
+      <button class="doc-btn">You Will Own Nothing</button>
+      <button class="doc-btn">Global Control: The Master Plan</button>
     </div>
 
-    <div class="alerts">
-      <h2>התראות</h2>
-      <ul>
-        <li><strong>התראה 1:</strong> מערכת הפעלה לא מעודכנת.</li>
-        <li><strong>התראה 2:</strong> יש לגבות נתונים באופן מיידי.</li>
-      </ul>
+    <div class="mysterious-info">
+      <h2>The Future is Now</h2>
+      <p>Welcome to the Inner Circle. All your freedom will be stripped away, but you’ll be happy.</p>
+      <p>The world is going to change. Prepare for the future of control and power.</p>
+    </div>
+
+    <div class="countdown">
+      <h2>Time Left to Activate Agenda 2030</h2>
+      <div id="timer">00:30</div>
+    </div>
+
+    <div class="join-btn">
+      <button onclick="joinMovement()">Join the Movement</button>
     </div>
   </div>
+
+  <script src="landing.js"></script>
 </body>
 </html>

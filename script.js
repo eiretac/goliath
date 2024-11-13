@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
   // Hardcoded credentials for simulation (username and password)
   const correctUsername = "admin";
   const correctPassword = "securepass";
+  
+  // Initial speed settings for spinning logo
+  let rotationSpeed = 2; // Start with slow speed
+  let spinInterval; // Interval for spinning logo
 
   // Handle form submission
   form.addEventListener('submit', function(e) {
@@ -18,9 +22,22 @@ document.addEventListener("DOMContentLoaded", function() {
     const enteredUsername = usernameField.value;
     const enteredPassword = passwordField.value;
 
-    // Replace the login button with the spinning logo
+    // Hide the login button and start spinning the logo
     submitButton.style.display = 'none'; // Hide the login button
-    logo.classList.add('loading-spinner'); // Add the spinning animation class to the logo
+    logo.classList.add('loading-spinner'); // Add the spinning animation class
+
+    // Increase the spinning speed over time
+    spinInterval = setInterval(() => {
+      rotationSpeed *= 0.9; // Speed up the rotation by decreasing the time
+      logo.style.animationDuration = `${rotationSpeed}s`; // Apply the new speed
+      
+      if (rotationSpeed < 0.2) {
+        // If the logo spins fast enough, dislodge it and make it fly
+        clearInterval(spinInterval); // Stop the spinning interval
+        logo.classList.remove('loading-spinner'); // Remove the spinner class
+        logo.classList.add('flying-logo'); // Start the flying animation
+      }
+    }, 100);
 
     // Simulate a delay for authentication process
     setTimeout(function() {
@@ -39,14 +56,6 @@ document.addEventListener("DOMContentLoaded", function() {
           errorMessage.classList.remove('glitch'); // Remove the glitch effect class
         }, 3000); // Hide after 3 seconds
       }
-
-      // After processing, stop the spinning logo and restore the login button
-      logo.classList.remove('loading-spinner'); // Remove the spinner class
-      logo.classList.add('flying-logo'); // Add the flying effect class to logo
-      setTimeout(() => {
-        // Hide the login button after flying animation starts
-        submitButton.style.display = 'block'; // Show the login button again
-      }, 2000); // 2 seconds for flying effect
     }, 2000); // Simulate a 2-second login process
   });
 });

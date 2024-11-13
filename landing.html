@@ -1,61 +1,53 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>לוח בקרה מאובטח</title>
+  <title>מסך הבית</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="landing.css">
 </head>
 <body>
-  <div class="navbar">
-    <span class="logo">אזור מאובטח של מוסד</span>
+  <nav class="navbar">
+    <div class="logo">לוגו</div>
     <nav>
-      <a href="#">בית</a>
-      <a href="#">מסמכים</a>
-      <a href="#">דוחות</a>
+      <a href="#">דוקומנטים</a>
       <a href="#">הגדרות</a>
-      <a href="#">התנתקות</a>
+      <a href="#">יציאה</a>
     </nav>
-  </div>
+  </nav>
 
   <div class="container">
-    <h1>ברוך הבא, סוכן</h1>
-    <p class="intro">זהו האזור המאובטח שלך. אנא בדוק את המסמכים והדוחות האחרונים.</p>
+    <h1>ברוך הבא למערכת</h1>
+    <p class="intro">כאן תוכל לגשת לדוקומנטים מאובטחים ולהתחיל עבודה.</p>
 
     <div class="documents">
-      <h2>מסמכים</h2>
+      <h2>דוקומנטים זמינים</h2>
       <div class="document-list">
         <div class="document">
-          <h3>מבצע פניקס</h3>
-          <button onclick="openDocument('phoenix')">גשת למסמך</button>
+          <h3>מסמך 1</h3>
+          <button>גשת לדוקומנט</button>
         </div>
         <div class="document">
-          <h3>מבצע פטיש</h3>
-          <button onclick="openDocument('hammer')">גשת למסמך</button>
-        </div>
-        <div class="document">
-          <h3>תדרוך משימה X</h3>
-          <button onclick="openDocument('missionX')">גשת למסמך</button>
+          <h3>מסמך 2</h3>
+          <button>גשת לדוקומנט</button>
         </div>
       </div>
     </div>
 
     <div class="secure-actions">
       <h2>פעולות מאובטחות</h2>
-      <button onclick="accessSecureArea()">גישה לאזור מאובטח</button>
-      <button onclick="generateReport()">יצירת דוח</button>
+      <button>גשת לאזור מאובטח</button>
+      <button>צור דוח</button>
     </div>
 
     <div class="alerts">
-      <h2>התרעות אחרונות</h2>
+      <h2>התראות</h2>
       <ul>
-        <li><strong>התרעה #1</strong>: תדרוך משימה חדש זמין.</li>
-        <li><strong>התרעה #2</strong>: ניסיון גישה לא מורשה זוהה.</li>
+        <li><strong>התראה 1:</strong> מערכת הפעלה לא מעודכנת.</li>
+        <li><strong>התראה 2:</strong> יש לגבות נתונים באופן מיידי.</li>
       </ul>
     </div>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>

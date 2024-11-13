@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conspiracy Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <script defer src="dashboard.js"></script>
+</head>
+<body>
+  <!-- Banner for agent -->
+  <div class="banner">
+    <h1>Welcome, Agent [Code Name]</h1>
+    <p>Status: <strong>Active</strong></p>
+    <p>Level: <span class="level">4</span></p>
+    <p>Time Until Mission: <span class="countdown">00:05:32</span></p>
+  </div>
+
+  <!-- Agent levels and mission update -->
+  <div class="levels">
+    <h3>Agent Levels</h3>
+    <ul>
+      <li>Level 1: Novice Agent - Basic Tasks</li>
+      <li>Level 2: Intermediate Agent - Advanced Strategies</li>
+      <li>Level 3: Expert Agent - Deep Cover Missions</li>
+      <li>Level 4: Global Agent - The Mastermind Behind It All</li>
+    </ul>
+  </div>
+
+  <!-- Documents and updates section -->
+  <div class="mission-updates">
+    <h2>Mission Updates</h2>
+    <ul>
+      <li><a href="#">Agenda 2030 Plan - Top Secret</a></li>
+      <li><a href="#">Global Economic Rise Plan - First Disclosure</a></li>
+      <li><a href="#">Next Phase - Resource Domination</a></li>
+    </ul>
+  </div>
+
+  <!-- World Map with Global Domination Pins -->
+  <div id="map-container">
+    <h3>World Map - Key Locations</h3>
+    <img src="world-map.png" alt="World Map" id="world-map">
+  </div>
+
+  <!-- Command Console -->
+  <div class="console">
+    <h3>Command Center</h3>
+    <textarea id="consoleInput" placeholder="Enter secret commands here..." rows="4"></textarea>
+    <button onclick="executeCommand()">Execute Command</button>
+    <p id="commandOutput"></p>
+  </div>
+
+  <!-- Hidden Easter Egg -->
+  <div class="hidden-eggs">
+    <button onclick="alert('Code Word for Mission: Illuminati!')">Try to Lock the Secret Code</button>
+  </div>
+</body>
+</html>

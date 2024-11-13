@@ -25,26 +25,12 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       // If credentials are incorrect, show the error message with a glitch effect
       errorMessage.style.display = 'block'; // Make the error message visible
+      errorMessage.classList.add('glitch'); // Add the glitch effect class
       setTimeout(() => {
         // After a short delay, hide the error message (you can adjust the timing)
         errorMessage.style.display = 'none';
+        errorMessage.classList.remove('glitch'); // Remove the glitch effect class
       }, 3000); // Hide after 3 seconds
     }
   });
-
-  // Optional: Add some interaction effects for glitching when input fields are focused
-  usernameField.addEventListener('focus', function() {
-    usernameField.classList.add('glitch-effect');
-  });
-  usernameField.addEventListener('blur', function() {
-    usernameField.classList.remove('glitch-effect');
-  });
-
-  passwordField.addEventListener('focus', function() {
-    passwordField.classList.add('glitch-effect');
-  });
-  passwordField.addEventListener('blur', function() {
-    passwordField.classList.remove('glitch-effect');
-  });
-
 });

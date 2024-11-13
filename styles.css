@@ -108,6 +108,19 @@ button[type="submit"]:hover {
   background-color: #3a8bb0;
 }
 
+/* Video Feed Styling */
+.video-container {
+  margin-top: 15px;
+  border: 1px solid #4b9cd3;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+#videoFeed {
+  width: 100%;
+  height: auto;
+}
+
 /* Fade-in Animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }

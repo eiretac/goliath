@@ -52,7 +52,7 @@
 
       // Check for valid input and show a confirmation prompt
       if (email && launchCode) {
-        const confirmation = confirm('Are you sure you want to launch the nuclear payload? This action is irreversible.');
+        const confirmation = confirm('Are you sure you want to launch Goliath? This action is irreversible.');
 
         if (confirmation) {
           launchNuke(email);
@@ -67,7 +67,7 @@
       const audio = document.getElementById('nukeAudio');
       
       audio.play();
-      alert('The nuclear payload has been launched to ' + email);
+      alert('The Goliath has been launched to ' + email);
     }
   </script>
 </body>

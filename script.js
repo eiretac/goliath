@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
   const form = document.getElementById('loginForm'); // The login form element
-  const errorMessage = document.getElementById('errorMessage'); // Error message div
   const usernameField = document.getElementById('username'); // Username input field
   const passwordField = document.getElementById('password'); // Password input field
-  const videoElement = document.getElementById('videoFeed'); // Video element for camera feed
+  const logo = document.getElementById('logo'); // Logo element
+  const submitButton = document.querySelector('button[type="submit"]'); // Login button
+  const errorMessage = document.getElementById('errorMessage'); // Error message div
   
   // Hardcoded credentials for simulation (username and password)
   const correctUsername = "admin";
@@ -17,34 +18,35 @@ document.addEventListener("DOMContentLoaded", function() {
     const enteredUsername = usernameField.value;
     const enteredPassword = passwordField.value;
 
-    // Check if the entered credentials match the hardcoded ones
-    if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
-      // If credentials are correct, redirect to the secure area
-      alert('Access granted to the secure area.');
-      window.location.href = 'secure_area.html'; // Replace this with the actual destination URL
-    } else {
-      // If credentials are incorrect, show the error message with a glitch effect
-      errorMessage.style.display = 'block'; // Make the error message visible
-      errorMessage.classList.add('glitch'); // Add the glitch effect class
-      setTimeout(() => {
-        // After a short delay, hide the error message
-        errorMessage.style.display = 'none';
-        errorMessage.classList.remove('glitch'); // Remove the glitch effect class
-      }, 3000); // Hide after 3 seconds
-    }
-  });
+    // Replace the login button with the spinning logo
+    submitButton.style.display = 'none'; // Hide the login button
+    logo.classList.add('loading-spinner'); // Add the spinning animation class to the logo
 
-  // Request access to the camera and display it in the video element
-  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(function(stream) {
-        videoElement.srcObject = stream; // Set the video element source to the camera stream
-        videoElement.play(); // Start playing the video
-      })
-      .catch(function(error) {
-        console.error("Camera access was denied or an error occurred:", error);
-      });
-  } else {
-    console.error("getUserMedia is not supported in this browser.");
-  }
+    // Simulate a delay for authentication process
+    setTimeout(function() {
+      // Check if the entered credentials match the hardcoded ones
+      if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+        // If credentials are correct, redirect to the secure area
+        alert('Access granted to the secure area.');
+        window.location.href = 'secure_area.html'; // Replace this with the actual destination URL
+      } else {
+        // If credentials are incorrect, show the error message with a glitch effect
+        errorMessage.style.display = 'block'; // Make the error message visible
+        errorMessage.classList.add('glitch'); // Add the glitch effect class
+        setTimeout(() => {
+          // After a short delay, hide the error message
+          errorMessage.style.display = 'none';
+          errorMessage.classList.remove('glitch'); // Remove the glitch effect class
+        }, 3000); // Hide after 3 seconds
+      }
+
+      // After processing, stop the spinning logo and restore the login button
+      logo.classList.remove('loading-spinner'); // Remove the spinner class
+      logo.classList.add('flying-logo'); // Add the flying effect class to logo
+      setTimeout(() => {
+        // Hide the login button after flying animation starts
+        submitButton.style.display = 'block'; // Show the login button again
+      }, 2000); // 2 seconds for flying effect
+    }, 2000); // Simulate a 2-second login process
+  });
 });

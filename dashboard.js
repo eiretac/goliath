@@ -32,3 +32,27 @@ document.addEventListener("DOMContentLoaded", () => {
   let agentLevel = document.querySelector(".level");
   agentLevel.textContent = 4; // Set to the current level (can be dynamically set based on login or other criteria)
 });
+
+// Trigger popup when certain actions occur
+function triggerPopup(message) {
+  const popupMessage = document.getElementById('popup-message');
+  popupMessage.textContent = message;  // Set the message dynamically
+  document.getElementById('security-popup').style.display = 'flex';  // Show the popup
+}
+
+// Close the popup
+function closePopup() {
+  document.getElementById('security-popup').style.display = 'none';  // Hide the popup
+}
+
+// This is just an example of using it in the mission update section.
+// You can implement it for any action you want to be restricted.
+function executeCommand() {
+  const commandInput = document.getElementById('consoleInput').value;
+  if (commandInput.trim() === '') {
+    triggerPopup('שגיאה: הקלד פקודה חוקית');  // Error: Enter a valid command
+  } else {
+    // Handle command execution here
+    console.log('Executing command:', commandInput);
+  }
+}

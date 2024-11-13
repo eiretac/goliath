@@ -1,7 +1,7 @@
 /* General Styles */
 body {
   font-family: 'Roboto', sans-serif;
-  background: #1e1e1e;
+  background: #121212;
   color: #fff;
   margin: 0;
   padding: 0;
@@ -11,28 +11,42 @@ body {
   justify-content: flex-start;
 }
 
-h1, h3 {
+/* Typography */
+h1, h3, h2 {
+  font-family: 'Roboto', sans-serif;
   color: #f5f5f5;
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 0.5em;
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+h3 {
+  font-size: 1.7em;
 }
 
 /* Banner Styles */
 .banner {
-  background-color: #2c3e50;
+  background-color: #1c1c1c;
   color: #fff;
   text-align: center;
   padding: 20px;
   width: 100%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
 }
 
 .banner h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bold;
-  margin-bottom: 10px;
+  color: #e74c3c;
+  text-shadow: 0 0 10px rgba(231, 76, 60, 0.8);
 }
 
 .banner .countdown {
   color: #e74c3c;
-  font-size: 1.5em;
+  font-size: 1.6em;
   font-weight: bold;
 }
 
@@ -41,8 +55,9 @@ h1, h3 {
   margin-top: 40px;
   padding: 20px;
   width: 80%;
-  background-color: #34495e;
+  background-color: #2c3e50;
   border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .levels h3 {
@@ -56,11 +71,18 @@ h1, h3 {
 
 .levels ul li {
   padding: 5px 0;
+  transition: background-color 0.3s ease;
 }
 
 .levels ul li:hover {
-  background-color: #2c3e50;
+  background-color: #1c1c1c;
   cursor: pointer;
+}
+
+.levels ul li:before {
+  content: "🔑";
+  margin-right: 10px;
+  color: #f39c12;
 }
 
 /* Mission Updates Section */
@@ -70,6 +92,7 @@ h1, h3 {
   width: 80%;
   background-color: #34495e;
   border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .mission-updates h2 {
@@ -86,6 +109,7 @@ h1, h3 {
   background-color: #2c3e50;
   margin-bottom: 10px;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .mission-updates ul li:hover {
@@ -93,80 +117,69 @@ h1, h3 {
   cursor: pointer;
 }
 
+.mission-updates ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+.mission-updates ul li a:hover {
+  color: #e74c3c;
+  text-decoration: underline;
+}
+
 /* World Map Section */
 #map-container {
   margin-top: 40px;
   text-align: center;
+  width: 80%;
 }
 
 #world-map {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   border: 2px solid #34495e;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 }
 
-/* Console Section (CMD-like) */
+/* Command Center Styles */
 .console {
   margin-top: 40px;
   width: 80%;
-  background-color: #1c1c1c; /* Very dark gray background for terminal look */
-  padding: 30px;
+  background-color: #34495e;
+  padding: 20px;
   border-radius: 8px;
-  text-align: left; /* Align text to left for command input */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
-  color: #00FF00; /* Bright green text like in old terminals */
-  font-family: 'Courier New', Courier, monospace; /* Monospace font for terminal effect */
-  font-size: 1.1em;
-}
-
-.console h3 {
-  font-size: 1.5em;
-  margin-bottom: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
 }
 
 .console textarea {
   width: 100%;
-  padding: 12px;
-  background-color: #1c1c1c;
-  color: #00FF00; /* Bright green text for commands */
+  padding: 15px;
+  background-color: #2c3e50;
+  color: #fff;
   border: 1px solid #34495e;
   border-radius: 5px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New', monospace;
   font-size: 1.1em;
-  resize: none;
-  line-height: 1.6;
-  white-space: nowrap;
-  overflow-x: auto; /* Prevent wrapping, allow horizontal scrolling */
-  height: 200px; /* Set fixed height for the console input */
 }
 
 .console button {
-  margin-top: 20px;
-  padding: 12px 25px;
-  background-color: #16a085; /* Teal accent for execute button */
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #e74c3c;
   border: none;
   color: #fff;
   cursor: pointer;
-  font-size: 1.1em;
-  text-transform: uppercase;
+  font-size: 1.2em;
   border-radius: 5px;
-  font-family: 'Courier New', Courier, monospace;
+  transition: background-color 0.3s ease;
 }
 
 .console button:hover {
-  background-color: #1abc9c; /* Lighter teal for hover effect */
-}
-
-/* Secret Code Input */
-.console .secret-input {
-  margin-top: 15px;
-  padding: 12px;
-  background-color: #1c1c1c;
-  color: #00FF00; /* Bright green text for the secret code */
-  border: 1px solid #34495e;
-  border-radius: 5px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1.1em;
+  background-color: #c0392b;
 }
 
 /* Easter Egg Button */
@@ -180,8 +193,46 @@ h1, h3 {
   color: #fff;
   border: none;
   cursor: pointer;
+  font-size: 1.2em;
+  border-radius: 5px;
 }
 
 .hidden-eggs button:hover {
   background-color: #9b59b6;
+}
+
+/* Dark Mode/Light Mode Toggle */
+body.dark-mode {
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+.dark-mode .banner {
+  background-color: #1a1a1a;
+}
+
+.dark-mode .mission-updates {
+  background-color: #212121;
+}
+
+.dark-mode .levels {
+  background-color: #2a2a2a;
+}
+
+/* Animations */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #f39c12, 0 0 10px #f39c12, 0 0 15px #f39c12;
+  }
+  50% {
+    text-shadow: 0 0 10px #e74c3c, 0 0 15px #e74c3c, 0 0 20px #e74c3c;
+  }
+  100% {
+    text-shadow: 0 0 5px #f39c12, 0 0 10px #f39c12, 0 0 15px #f39c12;
+  }
+}
+
+/* Trigger the glow animation */
+h1, .mission-updates ul li a {
+  animation: glow 1.5s ease-in-out infinite alternate;
 }

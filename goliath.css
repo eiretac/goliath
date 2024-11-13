@@ -128,7 +128,7 @@ input:focus {
 }
 
 .popup-content {
-  background-color: #4c7ead;
+  background-color: #2a2d30;
   padding: 30px;
   border-radius: 10px;
   text-align: center;
@@ -136,7 +136,7 @@ input:focus {
 }
 
 .popup h2 {
-  color: #e74c3c;
+  color: #fff;
   font-size: 2em;
   margin-bottom: 15px;
 }

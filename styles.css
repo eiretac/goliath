@@ -1,155 +1,100 @@
-/* Reset default styles */
+/* Base Styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Dark background with gradients for a more futuristic look */
 body {
-  font-family: 'Roboto', sans-serif;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.9) 0%, rgba(34, 34, 34, 1) 70%);
-  color: #ffffff;
-  height: 100vh;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #0a0a0a;
+  color: #00ff00;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   overflow: hidden;
-  transition: background 0.5s ease;
 }
 
-/* Main login container */
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
   background: rgba(0, 0, 0, 0.8);
-  padding: 30px 50px;
+  padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-  text-align: center;
-  max-width: 400px;
-  width: 100%;
-  transition: transform 0.5s ease-in-out;
+  border: 2px solid #00ff00;
+  width: 300px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
 }
 
-/* Logo (if applicable) */
 h1 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 3em;
-  color: #fff;
+  color: #00ff00;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.input-container {
   margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: color 0.3s ease;
 }
 
-/* Input fields */
-.input-field {
+input {
   width: 100%;
-  padding: 10px 20px;
-  margin: 10px 0;
-  border: 2px solid #333;
+  padding: 10px;
+  font-size: 16px;
+  background: #333;
+  border: 1px solid #444;
   border-radius: 5px;
-  background: transparent;
-  color: #fff;
-  font-size: 1.1em;
-  letter-spacing: 1px;
-  transition: border-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Glitch effect on input focus */
-.input-field:focus {
+  color: #00ff00;
   outline: none;
-  border-color: #0f0;
-  animation: glitch 1.5s infinite;
 }
 
-/* Hover effect on inputs */
-.input-field:hover {
-  transform: scale(1.05);
+input:focus {
+  border-color: #00ff00;
+  box-shadow: 0 0 5px #00ff00;
 }
 
-/* Button (for submitting) */
 button {
   width: 100%;
-  padding: 12px;
-  margin-top: 20px;
-  background: linear-gradient(45deg, #0a0a0a, #ff00cc);
-  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #00ff00;
+  color: #0a0a0a;
   border: none;
   border-radius: 5px;
-  font-size: 1.2em;
-  font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-/* Button hover effect */
 button:hover {
-  transform: scale(1.1);
-  background: linear-gradient(45deg, #ff00cc, #ff4400);
+  background-color: #008f00;
 }
 
-/* Glitch effect animation */
-@keyframes glitch {
-  0% {
-    text-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #ff00ff;
-    transform: translateX(-2px);
-  }
-  25% {
-    text-shadow: -2px -2px 0px #ff0000, 2px 2px 0px #ff00ff;
-    transform: translateX(2px);
-  }
-  50% {
-    text-shadow: 2px -2px 0px #ff0000, -2px 2px 0px #ff00ff;
-    transform: translateX(-2px);
-  }
-  75% {
-    text-shadow: -2px 2px 0px #ff0000, 2px -2px 0px #ff00ff;
-    transform: translateX(2px);
-  }
-  100% {
-    text-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #ff00ff;
-    transform: translateX(-2px);
-  }
-}
-
-/* Error message for invalid login */
-#errorMessage {
+.error-message {
   display: none;
-  background-color: #f44336;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 20px;
-  font-size: 1em;
+  color: red;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: opacity 0.5s ease-in-out;
+  font-size: 14px;
+  margin-top: 10px;
+  font-style: italic;
 }
 
-/* Glitchy effect on error message */
-#errorMessage.glitch {
-  animation: glitch 1.5s infinite;
-  opacity: 1;
+/* Glitch effect on error message */
+.error-message.glitch {
+  animation: glitch 1s infinite;
 }
 
-/* Subtle animation on the container */
-.container:hover {
-  transform: scale(1.05);
+@keyframes glitch {
+  0% { transform: translateX(0) skewX(0deg); }
+  20% { transform: translateX(2px) skewX(5deg); }
+  40% { transform: translateX(-3px) skewX(-5deg); }
+  60% { transform: translateX(3px) skewX(3deg); }
+  80% { transform: translateX(-2px) skewX(-3deg); }
+  100% { transform: translateX(0) skewX(0deg); }
 }
 
-/* Media Queries for responsiveness */
-@media (max-width: 600px) {
-  .container {
-    padding: 20px;
-    max-width: 90%;
-  }
-  
-  h1 {
-    font-size: 2em;
-  }
-
-  .input-field, button {
-    font-size: 1em;
-    padding: 10px;
-  }
-}

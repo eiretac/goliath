@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found</title>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock:wght@700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    /* General Body Styles */
+    body {
+      background-color: #1e1e1e;
+      font-family: 'Gloock', sans-serif;
+      color: #ff4c4c;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      overflow: hidden;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Red Glow Animation */
+    @keyframes red-glow {
+      0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; }
+      100% { text-shadow: 0 0 10px #ff4c4c, 0 0 20px #ff4c4c, 0 0 30px #ff4c4c; }
+    }
+
+    /* Heading Styling */
+    h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 4rem;
+      color: #ff4c4c;
+      animation: red-glow 1s infinite alternate;
+      letter-spacing: 2px;
+      margin: 0;
+      padding: 10px;
+      text-transform: uppercase;
+      border-bottom: 3px solid #ff4c4c;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Body Message Styling */
+    p {
+      font-size: 1.5rem;
+      color: #b0b0b0;
+      margin-top: 20px;
+      font-family: 'Gloock', sans-serif;
+      z-index: 10;
+      animation: flicker 1s infinite;
+    }
+
+    /* Flickering Text Animation */
+    @keyframes flicker {
+      0% { opacity: 0.5; }
+      50% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+
+    /* Countdown Timer */
+    .countdown {
+      font-size: 2rem;
+      color: #ff4c4c;
+      font-family: 'Press Start 2P', cursive;
+      margin-top: 20px;
+      animation: countdown 1s linear infinite;
+    }
+
+    @keyframes countdown {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    /* Dark Shadow Effects */
+    .shadow-effect {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 200px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      filter: blur(20px);
+      animation: shadow-move 2s infinite;
+      z-index: 0;
+    }
+
+    @keyframes shadow-move {
+      0% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -60%) scale(1.2); }
+      100% { transform: translate(-50%, -50%) scale(1); }
+    }
+
+    /* Star of David Symbol */
+    .star-of-david {
+      width: 150px;
+      height: 150px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Star_of_David.svg/800px-Star_of_David.svg.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-top: 30px;
+      animation: spin 4s linear infinite, shadow-move 3s infinite alternate;
+    }
+
+    /* Spinning Animation */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Link Button Styling */
+    a {
+      text-decoration: none;
+      color: #ff4c4c;
+      font-size: 1.2rem;
+      border: 2px solid #ff4c4c;
+      padding: 10px 20px;
+      margin-top: 30px;
+      font-family: 'Press Start 2P', cursive;
+      transition: all 0.3s;
+      z-index: 10;
+    }
+
+    a:hover {
+      background-color: #ff4c4c;
+      color: #000000;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Dark Shadows Effect -->
+  <div class="shadow-effect"></div>
+  <div class="shadow-effect" style="animation-delay: 1s;"></div>
+
+  <!-- Main Content -->
+  <h1>404 - Page Not Found</h1>
+  <p>Something went terribly wrong...<br> This page is lost to the abyss.</p>
+  
+  <!-- Countdown Timer -->
+  <div class="countdown">
+    <p id="timer">Time's Running Out...</p>
+  </div>
+
+  <!-- Star of David Symbol -->
+  <div class="star-of-david"></div>
+
+  <!-- Return Link -->
+  <a href="/">Return to Safety</a>
+
+  <script>
+    // Countdown Timer Logic (Just for demo)
+    let timerElement = document.getElementById('timer');
+    let timeLeft = 10; // Set time to countdown from
+
+    const countdownInterval = setInterval(function() {
+      if (timeLeft > 0) {
+        timerElement.textContent = "Time's Running Out... " + timeLeft + "s";
+        timeLeft--;
+      } else {
+        clearInterval(countdownInterval);
+        timerElement.textContent = "It’s too late...";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>

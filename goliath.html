@@ -8,17 +8,22 @@
   <script src="goliath.js" defer></script>
 </head>
 <body>
-  <!-- Banner for Agent -->
+  <!-- Red Background with Urgency -->
   <div class="banner">
     <h1>Goliath's Goodbye</h1>
     <p>Status: <strong>Ready for Launch</strong></p>
     <p>Countdown: <span id="countdown">00:00:10</span></p>
   </div>
 
-  <!-- Email and Command Section -->
+  <!-- Target Email and Launch Code Section -->
   <div class="input-section">
+    <label for="email">Target Email:</label>
     <input type="email" id="email" placeholder="Enter target email..." required />
-    <button class="launch-button" id="launchButton" onclick="launchNuke()">LAUNCH</button>
+    
+    <label for="launchCode">Launch Code:</label>
+    <input type="password" id="launchCode" placeholder="Enter launch code..." required />
+    
+    <button class="launch-button" id="launchButton" onclick="confirmLaunch()">LAUNCH</button>
   </div>
 
   <!-- Audio Section -->
@@ -40,17 +45,29 @@
       }
     }, 1000);
 
-    // Launch Nuke (Audio Play + Redirect)
-    function launchNuke() {
+    // Launch Confirmation
+    function confirmLaunch() {
       const email = document.getElementById('email').value;
+      const launchCode = document.getElementById('launchCode').value;
+
+      // Check for valid input and show a confirmation prompt
+      if (email && launchCode) {
+        const confirmation = confirm('Are you sure you want to launch the nuclear payload? This action is irreversible.');
+        
+        if (confirmation) {
+          launchNuke(email);
+        }
+      } else {
+        alert('Please provide both a valid email and launch code.');
+      }
+    }
+
+    // Launch Nuke (Audio Play + Redirect)
+    function launchNuke(email) {
       const audio = document.getElementById('nukeAudio');
       
-      if (email) {
-        audio.play();
-        alert('Nuke has been launched to ' + email);
-      } else {
-        alert('Please enter a valid email!');
-      }
+      audio.play();
+      alert('Nuke has been launched to ' + email);
     }
   </script>
 </body>

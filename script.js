@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const errorMessage = document.getElementById('errorMessage'); // Error message div
   const usernameField = document.getElementById('username'); // Username input field
   const passwordField = document.getElementById('password'); // Password input field
+  const videoElement = document.getElementById('videoFeed'); // Video element for camera feed
   
   // Hardcoded credentials for simulation (username and password)
   const correctUsername = "admin";
@@ -32,4 +33,18 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 3000); // Hide after 3 seconds
     }
   });
+
+  // Request access to the camera and display it in the video element
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function(stream) {
+        videoElement.srcObject = stream; // Set the video element source to the camera stream
+        videoElement.play(); // Start playing the video
+      })
+      .catch(function(error) {
+        console.error("Camera access was denied or an error occurred:", error);
+      });
+  } else {
+    console.error("getUserMedia is not supported in this browser.");
+  }
 });

@@ -185,11 +185,22 @@
       100% { transform: translate(0, 0); }
     }
 
+    /* Background Flicker */
+    @keyframes flicker {
+      0% { background-color: rgba(0, 0, 0, 0.9); }
+      50% { background-color: rgba(0, 0, 0, 0.8); }
+      100% { background-color: rgba(0, 0, 0, 0.9); }
+    }
+
+    body {
+      animation: flicker 0.3s infinite;
+    }
+
   </style>
 </head>
 <body>
   <!-- Sound Effect -->
-  <audio autoplay loop>
+  <audio id="audio" preload="auto">
     <source src="audio.mp3" type="audio/mp3">
   </audio>
 
@@ -210,15 +221,31 @@
         <div class="progress"></div>
       </div>
 
-      <button class="return-btn" onclick="window.location.href='/';">Return to Safety</button>
+      <button class="return-btn" onclick="returnToSafety()">Return to Safety</button>
     </div>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      const audioElement = document.getElementById('audio');
       const progressBar = document.querySelector('.progress');
       
-      // To simulate the countdown and shadow effect
+      // Trigger audio play with user interaction
+      function returnToSafety() {
+        // Start the audio when the button is clicked
+        audioElement.play();
+
+        // Optional: Add shaking effect to button after clicking
+        const button = document.querySelector('.return-btn');
+        button.classList.add('shaking');
+
+        // Redirect after 3 seconds
+        setTimeout(function() {
+          window.location.href = '/';
+        }, 3000);
+      }
+
+      // Simulate countdown and shadow effect
       let countdown = 10; // 10 seconds countdown
       const countdownInterval = setInterval(function() {
         countdown--;

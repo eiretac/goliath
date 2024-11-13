@@ -1,54 +1,63 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subscribe to Newsletters</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Top Secret Subscription Hub</h1>
-        <p>Sign up for classified newsletters. Proceed with caution.</p>
-    </header>
-    
-    <main>
-        <section class="email-input">
-            <h2>Enter Your Email (For Secret Access)</h2>
-            <input type="email" id="user-email" placeholder="Enter your email address" required>
-        </section>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/ZopLogoInvert.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div id="__next">
+      <div class="SignIn_container__35cKP">
+        <div class="SignIn_matrix__A2uRA"></div>
+        <div class="SignIn_overlay__AyHRI"></div>
+        <div class="SignIn_card__EMFYY">
+          <div class="SignIn_banner__qkhbw">
+            TOP SECRET // AUTHORIZED ACCESS ONLY
+          </div>
+          <img src="/apollo_logo.png" alt="Apollo Logo" class="SignIn_logo__0tEef" />
+          <h1 class="SignIn_title__VvTrW">APOLLO</h1>
+          <p class="SignIn_subtitle__ycq6C">Secure Login</p>
+          
+          <form id="loginForm" action="#" onsubmit="return validateLogin(event)">
+            <input
+              type="text"
+              id="username"
+              placeholder="Username"
+              required
+              class="inputField"
+            />
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              required
+              class="inputField"
+            />
+            <button
+              type="submit"
+              class="SignIn_signInButton__QoGFF"
+            >
+              Begin Authentication
+            </button>
+          </form>
 
-        <section class="newsletter-selection">
-            <h2>Select Newsletters</h2>
-            <div class="newsletter-category">
-                <h3>Technology</h3>
-                <label><input type="checkbox" class="newsletter" data-newsletter="tech1"> Tech Daily Digest</label><br>
-                <label><input type="checkbox" class="newsletter" data-newsletter="tech2"> Gadget News Weekly</label><br>
-            </div>
-            <div class="newsletter-category">
-                <h3>Humor</h3>
-                <label><input type="checkbox" class="newsletter" data-newsletter="humor1"> Funny Meme of the Day</label><br>
-                <label><input type="checkbox" class="newsletter" data-newsletter="humor2"> Daily Jokes</label><br>
-            </div>
-            <div class="newsletter-category">
-                <h3>Health & Wellness</h3>
-                <label><input type="checkbox" class="newsletter" data-newsletter="health1"> Wellness Tips</label><br>
-                <label><input type="checkbox" class="newsletter" data-newsletter="health2"> Fitness Motivation</label><br>
-            </div>
-        </section>
+          <div id="errorMessage" class="errorMessage" style="display: none;">
+            Invalid username or password. Please try again.
+          </div>
 
-        <button id="subscribe-button">Confirm Subscription</button>
-
-        <section id="confirmation" style="display:none;">
-            <h2>Operation Complete</h2>
-            <p>You have successfully subscribed. Stay vigilant.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Top Secret Hub | Classified Access Only</p>
-    </footer>
-
-    <script src="scripts.js"></script>
-</body>
+          <p class="SignIn_footerText__s8MuU">
+            SYSTEM MONITORING ACTIVE. ALL ACCESS IS LOGGED AND TRACKED.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

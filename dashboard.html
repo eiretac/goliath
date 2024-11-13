@@ -1,70 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conspiracy Dashboard</title>
+  <title>דשבורד קשר</title>
   <link rel="stylesheet" href="dashboard.css">
   <script defer src="dashboard.js"></script>
 </head>
 <body>
   <!-- Banner for agent -->
   <div class="banner">
-    <h1>Welcome, Agent [Code Name]</h1>
-    <p>Status: <strong>Active</strong></p>
-    <p>Level: <span class="level">4</span></p>
-    <p>Time Until Mission: <span class="countdown">00:05:32</span></p>
+    <h1>ברוך הבא, סוכן [שם קוד]</h1>
+    <p>סטטוס: <strong>פעיל</strong></p>
+    <p>דרגה: <span class="level">4</span></p>
+    <p>זמן עד למשימה: <span class="countdown">00:05:32</span></p>
   </div>
 
   <!-- Live Updates Feed -->
   <div class="live-feed">
-    <h3>Live Updates</h3>
+    <h3>עדכונים חיים</h3>
     <ul>
-      <li>Mission 2306 - Data Compromised! Secure Protocol Activated...</li>
-      <li>Location Z1 under surveillance. Proceed with caution!</li>
-      <li>Agent X-22 report: Mission failure. Agent compromised.</li>
-      <li>Critical Alert: "Sustainable Development Goals" Phase 2 Initiated.</li>
+      <li>משימה 2306 - נתונים נפגעו! פרוטוקול מאובטח הופעל...</li>
+      <li>מיקום Z1 תחת מעקב. פעל בזהירות!</li>
+      <li>דו"ח סוכן X-22: כישלון במשימה. הסוכן הוחלף.</li>
+      <li>התרעה קריטית: "מטרות פיתוח ברות קיימא" שלב 2 הופעל.</li>
     </ul>
   </div>
 
   <!-- Agent Levels and Mission Update -->
   <div class="levels">
-    <h3>Agent Levels</h3>
+    <h3>רמות סוכן</h3>
     <ul>
-      <li>Level 1: Novice Agent - Basic Tasks</li>
-      <li>Level 2: Intermediate Agent - Advanced Strategies</li>
-      <li>Level 3: Expert Agent - Deep Cover Missions</li>
-      <li>Level 4: Global Agent - The Mastermind Behind It All</li>
+      <li>רמה 1: סוכן מתחיל - משימות בסיסיות</li>
+      <li>רמה 2: סוכן בינוני - אסטרטגיות מתקדמות</li>
+      <li>רמה 3: סוכן מומחה - משימות סמויות</li>
+      <li>רמה 4: סוכן עולמי - המוח מאחורי הכל</li>
     </ul>
   </div>
 
   <!-- Mission Updates Section -->
   <div class="mission-updates">
-    <h2>Mission Updates</h2>
+    <h2>עדכוני משימה</h2>
     <ul>
-      <li><a href="#">Agenda 2030 Plan - Top Secret</a></li>
-      <li><a href="#">Global Economic Rise Plan - First Disclosure</a></li>
-      <li><a href="#">Next Phase - Resource Domination</a></li>
+      <li><a href="#">תוכנית 2030 - סודי ביותר</a></li>
+      <li><a href="#">תוכנית עליית כלכלה גלובלית - חשיפה ראשונה</a></li>
+      <li><a href="#">שלב הבא - שליטה במשאבים</a></li>
     </ul>
   </div>
 
   <!-- World Map with Global Domination Pins -->
   <div id="map-container">
-    <h3>World Map - Key Locations</h3>
-    <img src="world-map.png" alt="World Map" id="world-map">
+    <h3>מפת העולם - מיקומים חשובים</h3>
+    <img src="world-map.png" alt="מפת העולם" id="world-map">
   </div>
 
   <!-- Command Console -->
   <div class="console">
-    <h3>Command Center</h3>
-    <textarea id="consoleInput" placeholder="Enter secret commands here..." rows="4"></textarea>
-    <button onclick="executeCommand()">Execute Command</button>
+    <h3>מרכז פיקוד</h3>
+    <textarea id="consoleInput" placeholder="הכנס פקודות סודיות כאן..." rows="4"></textarea>
+    <button onclick="executeCommand()">הפעל פקודה</button>
     <p id="commandOutput"></p>
   </div>
 
   <!-- Hidden Easter Egg -->
   <div class="hidden-eggs">
-    <button onclick="alert('Code Word for Mission: Illuminati!')">Try to Lock the Secret Code</button>
+    <button onclick="alert('מילת קוד למשימה: אילומינטי!')">נסה לנעול את הקוד הסודי</button>
   </div>
 </body>
 </html>

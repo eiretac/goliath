@@ -98,3 +98,31 @@ button:hover {
   100% { transform: translateX(0) skewX(0deg); }
 }
 
+/* Warning Banner Styling */
+.warning-banner {
+  background-color: #ff0000;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: flash 1s infinite alternate;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+@keyframes flash {
+  0% {
+    background-color: #ff0000;
+    color: #ffffff;
+  }
+  100% {
+    background-color: #8b0000;
+    color: #ffcccc;
+  }
+}

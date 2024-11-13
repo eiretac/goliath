@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conspiracy Dashboard</title>
+  <title>Dashboard</title>
   <link rel="stylesheet" href="dashboard.css">
   <script defer src="dashboard.js"></script>
 </head>
@@ -31,9 +31,9 @@
   <div class="mission-updates">
     <h2>עדכוני משימה</h2>
     <ul>
-      <li><a href="#">Agenda 2030 Plan - Top Secret</a></li>
-      <li><a href="#">Global Economic Rise Plan - First Disclosure</a></li>
-      <li><a href="#">Next Phase - Resource Domination</a></li>
+      <li><a href="#" onclick="triggerPopup('You have accessed classified documents!')">Agenda 2030 Plan - Top Secret</a></li>
+      <li><a href="#" onclick="triggerPopup('Unauthorized action detected!')">Global Economic Rise Plan - First Disclosure</a></li>
+      <li><a href="#" onclick="triggerPopup('Next phase breached! Proceed with caution!')">Next Phase - Resource Domination</a></li>
     </ul>
   </div>
 
@@ -55,5 +55,15 @@
   <div class="hidden-eggs">
     <button onclick="alert('Code Word for Mission: Illuminati!')">Try to Lock the Secret Code</button>
   </div>
+
+  <!-- Angry Security Popup Modal -->
+  <div id="security-popup" class="popup">
+    <div class="popup-content">
+      <h3>האזנה! פרצת אבטחה!</h3>
+      <p id="popup-message">You do not have permission to perform this action.</p>
+      <button onclick="closePopup()">סגור</button>
+    </div>
+  </div>
+
 </body>
 </html>

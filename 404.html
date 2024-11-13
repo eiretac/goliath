@@ -15,6 +15,10 @@
       color: #fff;
       height: 100vh;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       animation: flicker 0.3s infinite, distort 0.5s infinite;
     }
 
@@ -70,11 +74,11 @@
       background-color: #8b0000;
       color: #fff;
       text-align: center;
-      font-size: 24px;
+      font-size: 30px;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 2px;
-      padding: 10px;
+      padding: 15px;
       animation: flash 1s infinite alternate, shadowFlicker 0.5s infinite alternate;
     }
 
@@ -107,12 +111,13 @@
       display: none;
     }
 
-    /* Animation for the content */
+    /* Content Box */
     .content {
       text-align: center;
       position: relative;
       z-index: 2;
-      margin-top: 100px; /* Move the content down */
+      margin-top: 70px; /* Adjust to prevent overlap with the banner */
+      padding: 20px;
     }
 
     .content h1 {

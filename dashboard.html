@@ -3,22 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <title>Conspiracy Dashboard</title>
   <link rel="stylesheet" href="dashboard.css">
   <script defer src="dashboard.js"></script>
 </head>
 <body>
   <!-- Banner for agent -->
   <div class="banner">
-    <h1>ברוך הבא, סוכן [קוד שם]</h1>
+    <h1>Welcome, Agent [Code Name]</h1>
     <p>Status: <strong>Active</strong></p>
     <p>Level: <span class="level">4</span></p>
     <p>Time Until Mission: <span class="countdown">00:05:32</span></p>
   </div>
 
-  <!-- Agent levels and mission update -->
+  <!-- Live Updates Feed -->
+  <div class="live-feed">
+    <h3>Live Updates</h3>
+    <ul>
+      <li>Mission 2306 - Data Compromised! Secure Protocol Activated...</li>
+      <li>Location Z1 under surveillance. Proceed with caution!</li>
+      <li>Agent X-22 report: Mission failure. Agent compromised.</li>
+      <li>Critical Alert: "Sustainable Development Goals" Phase 2 Initiated.</li>
+    </ul>
+  </div>
+
+  <!-- Agent Levels and Mission Update -->
   <div class="levels">
-    <h3>רמות סוכן</h3>
+    <h3>Agent Levels</h3>
     <ul>
       <li>Level 1: Novice Agent - Basic Tasks</li>
       <li>Level 2: Intermediate Agent - Advanced Strategies</li>
@@ -27,20 +38,20 @@
     </ul>
   </div>
 
-  <!-- Documents and updates section -->
+  <!-- Mission Updates Section -->
   <div class="mission-updates">
-    <h2>עדכוני משימה</h2>
+    <h2>Mission Updates</h2>
     <ul>
-      <li><a href="#" onclick="triggerPopup('You have accessed classified documents!')">Agenda 2030 Plan - Top Secret</a></li>
-      <li><a href="#" onclick="triggerPopup('Unauthorized action detected!')">Global Economic Rise Plan - First Disclosure</a></li>
-      <li><a href="#" onclick="triggerPopup('Next phase breached! Proceed with caution!')">Next Phase - Resource Domination</a></li>
+      <li><a href="#">Agenda 2030 Plan - Top Secret</a></li>
+      <li><a href="#">Global Economic Rise Plan - First Disclosure</a></li>
+      <li><a href="#">Next Phase - Resource Domination</a></li>
     </ul>
   </div>
 
   <!-- World Map with Global Domination Pins -->
   <div id="map-container">
     <h3>World Map - Key Locations</h3>
-    <img src="https://sw12513.sfstatic.io/upload_dir/pics/canvas-print/kort/36006.jpg" alt="World Map" id="world-map">
+    <img src="world-map.png" alt="World Map" id="world-map">
   </div>
 
   <!-- Command Console -->
@@ -55,15 +66,5 @@
   <div class="hidden-eggs">
     <button onclick="alert('Code Word for Mission: Illuminati!')">Try to Lock the Secret Code</button>
   </div>
-
-  <!-- Angry Security Popup Modal -->
-  <div id="security-popup" class="popup">
-    <div class="popup-content">
-      <h3>האזנה! פרצת אבטחה!</h3>
-      <p id="popup-message">You do not have permission to perform this action.</p>
-      <button onclick="closePopup()">סגור</button>
-    </div>
-  </div>
-
 </body>
 </html>

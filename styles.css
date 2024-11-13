@@ -1,125 +1,189 @@
-/* Base styling */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+
 body {
-    font-family: 'Courier New', monospace;
-    background-color: #1d1d1d;
-    color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    letter-spacing: 1px;
+  background-color: #0b0d0f;
+  color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-header {
-    background-color: #222;
-    color: #fff;
-    padding: 20px;
-    border-bottom: 2px solid #444;
-    text-transform: uppercase;
+.SignIn_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  background-color: #1a1a1a;
+  overflow: hidden;
 }
 
-h1 {
-    margin: 0;
-    font-size: 2em;
-    font-weight: bold;
+.SignIn_matrix {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/matrix-overlay.png') repeat;
+  opacity: 0.1;
+  z-index: 0;
+  animation: matrixScroll 20s linear infinite;
 }
 
-h2 {
-    font-size: 1.5em;
+@keyframes matrixScroll {
+  0% {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 100%;
+  }
 }
 
-main {
-    padding: 30px;
-    border: 3px solid #f00; /* Red border */
-    margin: 50px auto;
-    width: 80%;
-    max-width: 800px;
-    background-color: #111;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+.SignIn_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255, 0, 0, 0.25), transparent 60%);
+  animation: pulse 6s infinite alternate;
+  z-index: 0;
 }
 
-.newsletter-category {
-    text-align: left;
-    margin-bottom: 20px;
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.05);
+    opacity: 0.5;
+  }
 }
 
-.newsletter-category h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    color: #f00; /* Red titles */
+.SignIn_banner {
+  font-size: 14px;
+  color: #ff4c4c;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: rgba(255, 76, 76, 0.1);
+  padding: 10px;
+  border-radius: 4px;
+  animation: blink 1.5s steps(2, start) infinite;
+  box-shadow: 0 0 10px rgba(255, 76, 76, 0.6);
 }
 
-.newsletter-category label {
-    display: block;
-    margin: 5px 0;
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #ccc; /* Lighter color for text */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
-input[type="email"] {
-    padding: 10px;
-    font-size: 1.2em;
-    border: 1px solid #444;
-    background-color: #333;
-    color: #fff;
-    margin-bottom: 20px;
-    width: 80%;
-    text-align: center;
+.SignIn_card {
+  position: relative;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8), inset 0 0 50px hsla(0, 0%, 100%, 0.05);
+  backdrop-filter: blur(10px);
+  max-width: 450px;
+  width: 100%;
+  z-index: 1;
+  animation: fadeInUp 1.5s ease-out;
 }
 
-button {
-    padding: 20px 40px;
-    background-color: #f00;
-    color: #fff;
-    font-size: 2em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
-    transition: background-color 0.3s ease;
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-button:hover {
-    background-color: #a00;
+.SignIn_logo {
+  width: 70px;
+  margin: 0 auto 20px;
+  display: block;
 }
 
-#confirmation {
-    margin-top: 30px;
-    color: #f00;
-    font-size: 1.5em;
-    font-weight: bold;
-    letter-spacing: 1px;
+.SignIn_title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ff4c4c;
+  text-transform: uppercase;
 }
 
-footer {
-    background-color: #222;
-    color: #fff;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-size: 0.9em;
-    letter-spacing: 0.5px;
-    border-top: 1px solid #444;
+.SignIn_subtitle {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-footer p {
-    margin: 0;
+.SignIn_warningText {
+  font-size: 13px;
+  color: #ff4c4c;
+  margin-top: 10px;
+  font-weight: 700;
+  animation: blink 1.8s infinite;
 }
 
-/* Additional effects for creepy feel */
-h1, h2, h3 {
-    text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.7);
+.SignIn_button {
+  background-color: #b71c1c;
+  color: #fff;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 20px rgba(183, 28, 28, 0.6), inset 0 0 10px hsla(0, 0%, 100%, 0.1);
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
-input[type="email"]:focus {
-    border-color: #f00;
-    background-color: #222;
+.SignIn_button:hover {
+  background-color: #a31414;
+  box-shadow: 0 0 25px rgba(183, 28, 28, 0.8), inset 0 0 12px hsla(0, 0%, 100%, 0.2);
 }
 
-#confirmation {
-    background-color: rgba(255, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 15px rgba(183, 28, 28, 0.7);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(183, 28, 28, 0.9);
+  }
+}
+
+.SignIn_footerText {
+  font-size: 12px;
+  color: #888;
+  margin-top: 30px;
+  font-style: italic;
+  opacity: 0.7;
+  text-transform: uppercase;
+  animation: fadeInUp 2s ease-out;
+}
+
+.errorMessage {
+  color: #ff4c4c;
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgba(255, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to Newsletters</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Top Secret Subscription Hub</h1>
+        <p>Sign up for classified newsletters. Proceed with caution.</p>
+    </header>
+    
+    <main>
+        <section class="email-input">
+            <h2>Enter Your Email (For Secret Access)</h2>
+            <input type="email" id="user-email" placeholder="Enter your email address" required>
+        </section>
+
+        <section class="newsletter-selection">
+            <h2>Select Newsletters</h2>
+            <div class="newsletter-category">
+                <h3>Technology</h3>
+                <label><input type="checkbox" class="newsletter" data-newsletter="tech1"> Tech Daily Digest</label><br>
+                <label><input type="checkbox" class="newsletter" data-newsletter="tech2"> Gadget News Weekly</label><br>
+            </div>
+            <div class="newsletter-category">
+                <h3>Humor</h3>
+                <label><input type="checkbox" class="newsletter" data-newsletter="humor1"> Funny Meme of the Day</label><br>
+                <label><input type="checkbox" class="newsletter" data-newsletter="humor2"> Daily Jokes</label><br>
+            </div>
+            <div class="newsletter-category">
+                <h3>Health & Wellness</h3>
+                <label><input type="checkbox" class="newsletter" data-newsletter="health1"> Wellness Tips</label><br>
+                <label><input type="checkbox" class="newsletter" data-newsletter="health2"> Fitness Motivation</label><br>
+            </div>
+        </section>
+
+        <button id="subscribe-button">Confirm Subscription</button>
+
+        <section id="confirmation" style="display:none;">
+            <h2>Operation Complete</h2>
+            <p>You have successfully subscribed. Stay vigilant.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Top Secret Hub | Classified Access Only</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

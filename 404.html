@@ -32,7 +32,7 @@
       text-align: center;
       font-weight: bold;
       padding: 10px;
-      font-size: 22px;
+      font-size: 24px;
       font-family: 'Courier New', Courier, monospace;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -43,14 +43,27 @@
       z-index: 100;
     }
 
+    /* Flashing effect for the warning banner */
     @keyframes flash {
       0% {
         background-color: #ff0000;
         color: #ffffff;
       }
-      100% {
+      25% {
         background-color: #8b0000;
         color: #ffcccc;
+      }
+      50% {
+        background-color: #b30000;
+        color: #ffaaaa;
+      }
+      75% {
+        background-color: #550000;
+        color: #ff3333;
+      }
+      100% {
+        background-color: #800000;
+        color: #ff0000;
       }
     }
 
@@ -92,19 +105,25 @@
 
     /* Return Button Styling */
     .return-btn {
-      padding: 12px 30px;
+      padding: 14px 40px;
       background-color: #4b9cd3;
       color: #ffffff;
-      font-size: 16px;
+      font-size: 18px;
       border: none;
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin-top: 30px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
     .return-btn:hover {
       background-color: #3a8bb0;
+      transform: translateY(-3px);
+    }
+
+    .return-btn:active {
+      transform: translateY(2px);
     }
 
     /* Shake Effect */
@@ -135,13 +154,13 @@
 </head>
 <body>
   <!-- Sound Effect -->
-  <audio id="audio" preload="auto">
+  <audio id="audio" autoplay loop>
     <source src="audio.mp3" type="audio/mp3">
   </audio>
 
   <!-- Page Content -->
   <div class="warning-banner">
-    WARNING: Unauthorized Access is Prohibited
+    גישה בלתי מורשית אסורה
   </div>
 
   <!-- Main Content -->
@@ -154,16 +173,21 @@
     document.addEventListener("DOMContentLoaded", function() {
       const audioElement = document.getElementById('audio');
       
-      // Trigger audio play with user interaction
-      function returnToSafety() {
-        // Start the audio when the button is clicked
-        audioElement.play();
+      // Autoplay sound as soon as the page is loaded
+      audioElement.play();
 
-        // Optional: Add shaking effect to button after clicking
+      // Trigger shaking effect and redirect after pressing the button
+      function returnToSafety() {
+        // Start the audio if it's not already playing
+        if (audioElement.paused) {
+          audioElement.play();
+        }
+
+        // Add shaking effect to the button
         const button = document.querySelector('.return-btn');
         button.classList.add('shaking');
 
-        // Redirect after 3 seconds
+        // Redirect after a brief delay
         setTimeout(function() {
           window.location.href = '/';
         }, 3000);
